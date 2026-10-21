@@ -86,11 +86,11 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* curved strip */
 #work{display:block;overflow:hidden}
-.strip{position:relative;height:clamp(320px,50vh,540px);container-type:size;margin-inline:calc(50% - 50vw);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.strip{position:relative;height:clamp(320px,50vh,540px);container-type:size;margin-inline:calc(50% - var(--vw,100vw)/2);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
 .strip.dragging{cursor:grabbing}
 .strip::before,.strip::after{content:"";position:absolute;top:0;bottom:0;width:calc(var(--fade,12%) + 2%);z-index:2;pointer-events:none}
-.strip::before{left:0;background:linear-gradient(90deg,var(--bg) 20%,transparent)}
-.strip::after{right:0;background:linear-gradient(270deg,var(--bg) 20%,transparent)}
+.strip::before{left:0;background:linear-gradient(90deg,var(--bg) 32%,transparent)}
+.strip::after{right:0;background:linear-gradient(270deg,var(--bg) 32%,transparent)}
 .strip-glow{display:none}
 .band{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s}
 .band.ready{opacity:1}
@@ -375,6 +375,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
   (function(){
     var strip = document.getElementById('strip'), band = document.getElementById('band');
     if (!strip || !band) return;
+    function setVW(){ document.documentElement.style.setProperty('--vw', document.documentElement.clientWidth + 'px'); }
+    setVW(); addEventListener('resize', setVW);
     var SITES = [
       {name:'Worldwide Distributors', url:'https://worldwidedistributorsinc.com', img:'assets/work/wwd.jpg', st:'live', label:'Live', dot:'#5b9bff',
        desc:'Miami · One site for a lighting, electrical and construction firm, with every division under one contract.'},
@@ -403,7 +405,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
       var th = Math.min(TILE_H/100*h, MAX_WIDTH/100*w/ASPECT), radius = w*arc(bend);
       if (!(th > 0) || !(radius > 0)) return null;
       var deg = function(r){ return r*180/Math.PI; };
-      var unit = deg(th/radius), pitch = (ASPECT + GAP/100)*unit, limit = deg(bend) + ASPECT*unit/2;
+      var unit = deg(th/radius), pitch = (ASPECT + GAP/100)*unit, extra = Math.max(0, Math.min(ASPECT*unit*0.35, 118 - deg(bend) - ASPECT*unit)), limit = deg(bend) + ASPECT*unit/2 + extra;
       var cols = Math.min(40, Math.max(2, Math.ceil(2*limit/pitch)));
       var r4 = function(n){ return +n.toFixed(4); };
       var sweep = r4(cols*pitch/2);
