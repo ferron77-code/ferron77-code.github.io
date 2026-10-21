@@ -275,7 +275,7 @@ nav.primary a:hover{opacity:1}
 .chip i{width:8px;height:8px;border-radius:50%;background:var(--dot,var(--teal))}
 @media (max-width:768px){
   #work{padding-block:80px 80px}
-  .strip{height:min(46vh,380px)}
+  .strip{height:clamp(260px,40vh,340px)}
   .caption{grid-template-columns:minmax(0,1fr);padding:18px}
 }
 
@@ -387,7 +387,12 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   padding:9px 13px;border-radius:10px;background:rgba(10,12,40,.9);border:1px solid var(--line);color:#d6daf6;font-size:13px;
   opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;pointer-events:none}
 .sound-hint.show{opacity:1;transform:none}
-@media (max-width:768px){ .sound{height:38px;padding:0 12px} .sound .lbl{display:none} }
+@media (max-width:768px){
+  .site-header .sound{position:static;height:38px;width:38px;padding:0;justify-content:center;box-shadow:none;background:rgba(10,12,40,.55)}
+  .sound .lbl{display:none}
+  nav.primary{gap:10px}
+  .sound-hint{top:calc(env(safe-area-inset-top,0px) + 92px);bottom:auto;right:max(16px,env(safe-area-inset-right,0px));transform:translateY(-6px)}
+}
 @media (prefers-reduced-motion:reduce){ .sound.on .eq i{animation:none;height:10px} }
 </style>
 
@@ -627,10 +632,11 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <script>
 (function(){
   document.documentElement.classList.add('js');
-  var FRAME_COUNT = 433;            // set from the extracted film
-  var PACK_SIZE = 48, PACKS = Math.ceil(FRAME_COUNT / PACK_SIZE);   // film/pack_NN.json = arrays of base64 JPEGs
   var MOBILE = window.matchMedia('(max-width: 768px)').matches;
-  var STRIDE = MOBILE ? 2 : 1;      // phones load every other frame
+  // desktop: film/pack_NN.json (433 frames). phones: film/m_pack_NN.json, every other frame at 960px (217 frames, about half the data)
+  var FRAME_COUNT = MOBILE ? 217 : 433, PACK_PREFIX = MOBILE ? 'film/m_pack_' : 'film/pack_';
+  var PACK_SIZE = 48, PACKS = Math.ceil(FRAME_COUNT / PACK_SIZE);   // arrays of base64 JPEGs
+  var STRIDE = 1;
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var JUMP = new URLSearchParams(location.search).get('jump');
   if (JUMP !== null) history.scrollRestoration = 'manual';
@@ -746,8 +752,8 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
        desc:'Field operations · Replaced paper tickets for a 15-person crew: technician app, office dashboard, voice notes with translation. Demo on request.', dot:'#a0a6d2', cta:'Ask Maya for a demo ↗'};
 
     // geometry (ported from the tilted-grid hero): camera distance in cylinder radii, slices per tile
-    var SLICES = MOBILE ? 6 : 8, CAMERA = 1.6, MAX_WIDTH = 55;
-    var SPEED = 4.5, TILE_H = 42, ASPECT = 16/10, GAP = 7, AXIS = 50, CURVE = 70, FADE = 12;
+    var SLICES = MOBILE ? 6 : 8, CAMERA = 1.6, MAX_WIDTH = MOBILE ? 70 : 55;
+    var SPEED = 4.5, TILE_H = MOBILE ? 58 : 42, ASPECT = 16/10, GAP = 7, AXIS = 50, CURVE = MOBILE ? 52 : 70, FADE = 12;
     var bend = CURVE * Math.PI / 180;
     function arc(b){ return (CAMERA - 1 + Math.cos(b)) / (2 * CAMERA * Math.sin(b)); }
     function measure(w, h){
@@ -1041,7 +1047,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   }
   // fetch one pack and keep its frames as compressed blobs
   function loadPack(k){
-    return fetch('film/pack_' + String(k).padStart(2,'0') + '.json').then(function(r){ return r.json(); }).then(function(arr){
+    return fetch(PACK_PREFIX + String(k).padStart(2,'0') + '.json').then(function(r){ return r.json(); }).then(function(arr){
       arr.forEach(function(b64, j){
         var f = k*PACK_SIZE + j;
         if (f % STRIDE) return;
@@ -1100,6 +1106,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     var mtof = function(m){ return 440 * Math.pow(2, (m - 69) / 12); };
 
     function build(){
+      try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch(e){}
       ctx = new AC();
       comp = ctx.createDynamicsCompressor(); comp.threshold.value = -18; comp.ratio.value = 3; comp.connect(ctx.destination);
       master = ctx.createGain(); master.gain.value = 0; master.connect(comp);
@@ -1245,7 +1252,11 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     // a returning visitor who left sound on gets it back on their first tap or key press
     function firstGesture(){ if (want && (!ctx || ctx.state !== 'running')) on(); }
     ['pointerdown','keydown','touchend'].forEach(function(ev){ addEventListener(ev, firstGesture, {once:true, passive:true}); });
-    if (hint && !want){ setTimeout(function(){ hint.classList.add('show'); }, 1800); setTimeout(function(){ hint.classList.remove('show'); }, 9000); }
+    if (MOBILE){ var nav = document.querySelector('nav.primary'); if (nav) nav.insertBefore(btn, nav.querySelector('.btn')); }
+    if (hint && !want){
+      setTimeout(function(){ if (scrollY < 80) hint.classList.add('show'); }, 1800); setTimeout(function(){ hint.classList.remove('show'); }, 9000);
+      addEventListener('scroll', function(){ if (scrollY > 80) hint.classList.remove('show'); }, {passive:true});
+    }
     ui();
     return {tick:update};
   })();
