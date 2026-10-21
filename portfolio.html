@@ -151,7 +151,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .ui-mock .row small{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
 
 /* video cuts */
-.cuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .cut{text-decoration:none;color:var(--ink);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;transition:transform .35s var(--ease-out),border-color .35s}
 .cut:hover{transform:translateY(-4px);border-color:var(--accent)}
 .poster{position:relative;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;background:var(--bg-art,var(--frame))}
@@ -311,6 +311,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
           <button class="poster play" type="button" aria-label="Play the M&amp;G Brothers Construction commercial" style="--bg-art:#05101a url('https://i.ytimg.com/vi/-8nfCVXnR88/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">1:16</span></button>
           <div class="cut-body"><span class="tag">Commercial</span><h3>M&amp;G Brothers Construction</h3><p>Pool construction spot with AI narration and a full build timelapse.</p><a class="ask" href="https://youtu.be/-8nfCVXnR88" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
+        <div class="cut reveal" data-yt="9SXQMILlwiw">
+          <button class="poster play" type="button" aria-label="Play the Cuba B459 music video El Sol De Cuba" style="--bg-art:#140806 url('https://i.ytimg.com/vi/9SXQMILlwiw/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">4:08</span></button>
+          <div class="cut-body"><span class="tag">Music video</span><h3>Cuba B459 · El Sol De Cuba</h3><p>Official music video for the salsa artist's Cuban liberation anthem.</p><a class="ask" href="https://youtu.be/9SXQMILlwiw" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+        </div>
         <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
           <div class="poster" style="--bg-art:radial-gradient(90% 90% at 70% 30%,#3a3fb0,#12154a 60%,#070820)"><span class="len">1:02</span></div>
           <div class="cut-body"><span class="tag">Explainer</span><h3>Worldwide Distributors</h3><p>How their crew's new work order app replaces paper tickets.</p><span class="ask">Full cut on request ↗</span></div>
@@ -346,7 +350,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
     b.addEventListener('click',function(){
       var id=b.closest('.cut').dataset.yt, f=document.createElement('iframe');
       f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.title='M&G Brothers Construction commercial';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.title=b.getAttribute('aria-label').replace(/^Play the /,'');
       var d=document.createElement('div'); d.className='poster'; d.appendChild(f); b.replaceWith(d);
     });
   });
