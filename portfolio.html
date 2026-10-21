@@ -162,6 +162,12 @@ h1 em{font-style:normal;color:var(--accent)}
 .cut-body h3{font:800 24px/1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
 .cut-body p{margin:0;color:var(--muted);font-size:15px}
 .cut-body .ask{font-weight:600;color:var(--accent);margin-top:4px;font-size:14px}
+.cut-body a.ask{text-decoration:none}
+button.poster{border:0;padding:0;width:100%;cursor:pointer;font:inherit;color:inherit}
+.poster .pbtn{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;background:rgba(8,17,25,.72);border:2px solid var(--accent);display:grid;place-items:center;transition:transform .3s var(--ease-out),background .3s}
+.poster .pbtn::before{content:"";margin-left:5px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #EAF1F5}
+button.poster:hover .pbtn,button.poster:focus-visible .pbtn{transform:scale(1.08);background:var(--accent)}
+.poster iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
 
 /* next roll */
 .roll7{padding-block:80px 90px}
@@ -301,10 +307,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
     <div class="wrap">
       <div class="sec-head reveal"><h2 id="video">Video &amp; AI production</h2><p>Commercials and explainers, written, voiced and cut in-house.</p></div>
       <div class="cuts">
-        <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
-          <div class="poster" style="--bg-art:radial-gradient(90% 90% at 30% 20%,#1f6f8b,#0a2233 60%,#05101a)"><span class="len">1:16</span></div>
-          <div class="cut-body"><span class="tag">Commercial</span><h3>M&amp;G Brothers Construction</h3><p>Pool construction spot with AI narration and a full build timelapse.</p><span class="ask">Full cut on request ↗</span></div>
-        </a>
+        <div class="cut reveal" data-yt="-8nfCVXnR88">
+          <button class="poster play" type="button" aria-label="Play the M&amp;G Brothers Construction commercial" style="--bg-art:#05101a url('https://i.ytimg.com/vi/-8nfCVXnR88/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">1:16</span></button>
+          <div class="cut-body"><span class="tag">Commercial</span><h3>M&amp;G Brothers Construction</h3><p>Pool construction spot with AI narration and a full build timelapse.</p><a class="ask" href="https://youtu.be/-8nfCVXnR88" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+        </div>
         <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
           <div class="poster" style="--bg-art:radial-gradient(90% 90% at 70% 30%,#3a3fb0,#12154a 60%,#070820)"><span class="len">1:02</span></div>
           <div class="cut-body"><span class="tag">Explainer</span><h3>Worldwide Distributors</h3><p>How their crew's new work order app replaces paper tickets.</p><span class="ask">Full cut on request ↗</span></div>
@@ -336,6 +342,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
 <script>
 (function(){
   document.documentElement.classList.add('js');
+  document.querySelectorAll('.cut[data-yt] button.poster').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.closest('.cut').dataset.yt, f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true; f.title='M&G Brothers Construction commercial';
+      var d=document.createElement('div'); d.className='poster'; d.appendChild(f); b.replaceWith(d);
+    });
+  });
+
   var MOBILE = window.matchMedia('(max-width: 768px)').matches;
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* ---------- our work: curved strip ---------- */
