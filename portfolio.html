@@ -151,7 +151,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .ui-mock .row small{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
 
 /* video cuts */
-.cuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cuts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.cuts>.cut{grid-column:span 2}
+.cuts>.cut:nth-child(-n+2){grid-column:span 3}
 .cut{text-decoration:none;color:var(--ink);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;transition:transform .35s var(--ease-out),border-color .35s}
 .cut:hover{transform:translateY(-4px);border-color:var(--accent)}
 .poster{position:relative;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;background:var(--bg-art,var(--frame))}
@@ -181,7 +183,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
 
 .reveal{transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
 .js .reveal:not(.in){opacity:0;transform:translateY(22px)}
-@media (max-width:900px){ .grid,.cuts{grid-template-columns:minmax(0,1fr)} .caption{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:900px){ .grid,.cuts{grid-template-columns:minmax(0,1fr)} .cuts>.cut,.cuts>.cut:nth-child(-n+2){grid-column:auto} .caption{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:768px){ .strip{height:min(46vh,380px)} }
 @media (max-width:600px){ .brand-sub{display:none} .mast{padding-block:52px 16px} }
 @media (prefers-reduced-motion:reduce){ .reveal{transition:none} .js .reveal:not(.in){opacity:1;transform:none} .slate,.shot img,.cut{transition:none} }
@@ -314,6 +316,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
         <div class="cut reveal" data-yt="9SXQMILlwiw">
           <button class="poster play" type="button" aria-label="Play the Cuba B459 music video El Sol De Cuba" style="--bg-art:#140806 url('https://i.ytimg.com/vi/9SXQMILlwiw/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">4:08</span></button>
           <div class="cut-body"><span class="tag">Music video</span><h3>Cuba B459 · El Sol De Cuba</h3><p>Official music video for the salsa artist's Cuban liberation anthem.</p><a class="ask" href="https://youtu.be/9SXQMILlwiw" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+        </div>
+        <div class="cut reveal" data-yt="lV1_AbMyt-A">
+          <button class="poster play" type="button" aria-label="Play the Traffi-Gloves commercial" style="--bg-art:#0b0f14 url('https://i.ytimg.com/vi/lV1_AbMyt-A/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">1:10</span></button>
+          <div class="cut-body"><span class="tag">Commercial</span><h3>Traffi-Gloves</h3><p>Product commercial for a glove brand, from concept to final cut.</p><a class="ask" href="https://youtu.be/lV1_AbMyt-A" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
         <div class="cut reveal" data-yt="9_5QJXse3g8">
           <button class="poster play" type="button" aria-label="Play the Question Everything AI music video" style="--bg-art:#0b0f14 url('https://i.ytimg.com/vi/9_5QJXse3g8/hqdefault.jpg') center/cover no-repeat"><span class="pbtn" aria-hidden="true"></span><span class="len">2:59</span></button>
