@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Reel · Into All The World Productions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Explore websites, web apps, and AI assistants built for real South Florida businesses by Into All The World Productions.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Into All The World Productions">
+<meta property="og:title" content="The Reel · Into All The World Productions">
+<meta property="og:description" content="Explore websites, web apps, and AI assistants built for real South Florida businesses by Into All The World Productions.">
+<meta property="og:url" content="https://intoalltheworldstudio.netlify.app/portfolio">
+<meta property="og:image" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta property="og:image:secure_url" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Into All The World Productions. Tell us what you need built. Websites, web apps and AI assistants. South Florida.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Reel · Into All The World Productions">
+<meta name="twitter:description" content="Explore websites, web apps, and AI assistants built for real South Florida businesses by Into All The World Productions.">
+<meta name="twitter:image" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta name="twitter:image:alt" content="Into All The World Productions. Tell us what you need built. Websites, web apps and AI assistants. South Florida.">
+<meta name="theme-color" content="#13293A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: Into All The World's own film-slate world. Masthead, the curved strip of live sites,
+   then each roll as a slate (navy clapperboard header, screenshot, notes), the video cuts, and the next-roll close.
+   Light by default, dark when the viewer's system is dark, same tokens as the rest of the site. */
+:root{
+  --bg:#EEF2F4; --surface:#FFFFFF; --ink:#10202B; --muted:#4F6370; --line:#D3DDE3;
+  --accent:#A8781F; --accent-ink:#FFFFFF; --frame:#13293A; --frame-ink:#EAF1F5;
+  --live:#1F7A55; --preview:#9A6A12; --private:#4C5D9A; --shade:rgba(16,32,43,.10);
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0B1720; --surface:#112330; --ink:#E7EEF2; --muted:#9DB0BC; --line:#21394A;
+  --accent:#D9A64A; --accent-ink:#14110C; --frame:#081119; --frame-ink:#EAF1F5;
+  --live:#4CC28E; --preview:#E2B04F; --private:#98A8E6; --shade:rgba(0,0,0,.45); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0B1720; --surface:#112330; --ink:#E7EEF2; --muted:#9DB0BC; --line:#21394A;
+  --accent:#D9A64A; --accent-ink:#14110C; --frame:#081119; --frame-ink:#EAF1F5;
+  --live:#4CC28E; --preview:#E2B04F; --private:#98A8E6; --shade:rgba(0,0,0,.45); color-scheme:dark }
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--frame)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.gutter{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{width:100%;max-width:1180px;margin:0 auto}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* top bar: the navy frame color, like the slate heads */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--frame);color:var(--frame-ink)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;flex:none;border:1px solid rgba(234,241,245,.35);font:500 12px/1 var(--mono)}
+.brand-word{font:800 20px/1 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.brand-sub{display:block;font:500 9.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:3px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);text-decoration:none;padding:14px 22px;border-radius:999px;border:1px solid var(--line);cursor:pointer;white-space:nowrap;
+  transition:transform .25s var(--ease-out),filter .25s,box-shadow .25s}
+.btn:hover{filter:brightness(1.07)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn-go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);box-shadow:0 10px 26px -12px var(--accent)}
+.btn-gold{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn-sm{padding:10px 16px;font-size:14px}
+.btn-xl{padding:18px 28px;font-size:17px}
+
+/* masthead */
+.mast{padding-block:72px 24px;position:relative;overflow:hidden}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:10px;margin:0 0 18px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+h1{font:800 clamp(56px,10vw,132px)/.88 var(--display);letter-spacing:.005em;text-transform:uppercase;margin:0 0 22px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:36em;margin:0 0 28px}
+.credits{display:flex;flex-wrap:wrap;gap:8px 28px;padding-block:14px;border-block:1px solid var(--line);margin-top:40px;
+  font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.credits b{color:var(--ink);font-weight:500}
+
+/* curved strip */
+#work{display:block;overflow:hidden}
+.strip{position:relative;height:clamp(320px,50vh,540px);container-type:size;margin-inline:calc(50% - 50vw);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.strip.dragging{cursor:grabbing}
+.strip::before,.strip::after{content:"";position:absolute;top:0;bottom:0;width:calc(var(--fade,12%) + 2%);z-index:2;pointer-events:none}
+.strip::before{left:0;background:linear-gradient(90deg,var(--bg) 20%,transparent)}
+.strip::after{right:0;background:linear-gradient(270deg,var(--bg) 20%,transparent)}
+.strip-glow{display:none}
+.band{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s}
+.band.ready{opacity:1}
+.band.paused .tile{animation-play-state:paused}
+.tile{position:absolute;display:block;transform-style:preserve-3d;pointer-events:auto;cursor:pointer;outline:none;-webkit-user-drag:none;user-select:none}
+.slice{position:absolute;top:0;overflow:hidden;background:var(--frame);backface-visibility:hidden}
+.slice.l{border-radius:10px 0 0 10px}.slice.r{border-radius:0 10px 10px 0}
+.slice img{position:absolute;top:0;max-width:none;object-fit:cover;object-position:top center;display:block;user-select:none;-webkit-user-drag:none}
+.tile:hover .slice{filter:brightness(1.08)}
+.tile:hover .slice.l{box-shadow:inset 3px 0 0 var(--accent)}
+.tile:hover .slice.r{box-shadow:inset -3px 0 0 var(--accent)}
+.caption{min-height:112px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 26px;align-items:center;padding:20px 24px;
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);max-width:880px;margin:4px auto 0;box-shadow:0 18px 40px -30px var(--shade)}
+.caption.on{border-color:var(--accent)}
+.caption .c-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.caption h3{font:800 clamp(24px,2.6vw,30px)/1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
+.caption p{margin:0;color:var(--muted);font-size:15px}
+.status{display:inline-flex;align-items:center;gap:6px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid;white-space:nowrap}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.status.live{color:var(--live)} .status.preview,.status.concept{color:var(--preview)} .status.private{color:var(--private)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:9px;font:600 14px/1 var(--body);text-decoration:none;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);transition:border-color .2s}
+.chip:hover,.chip[aria-current="true"]{border-color:var(--accent)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* rolls */
+.rolls{padding-block:64px 24px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.sec-head h2{font:800 clamp(40px,5vw,64px)/.9 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
+.sec-head p{color:var(--muted);margin:0;max-width:28em}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.slate{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);
+  text-decoration:none;color:var(--ink);transition:transform .35s var(--ease-out),box-shadow .35s,border-color .35s}
+.slate:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 30px 50px -36px var(--shade)}
+.slate-head{order:1;position:relative;background:var(--frame);color:var(--frame-ink);padding:18px 20px 16px}
+.slate-head::before{content:"";position:absolute;inset:0 0 auto;height:6px;opacity:.2;background:repeating-linear-gradient(-45deg,var(--frame-ink) 0 10px,transparent 10px 20px)}
+.slate-meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin:6px 0 10px}
+.slate h3{font:800 clamp(28px,3vw,36px)/1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
+.frame-bar{display:none}
+.shot{order:2;position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--frame);border-bottom:1px solid var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 1.2s var(--ease-out)}
+.slate:hover .shot img{transform:scale(1.04)}
+.shot .go{position:absolute;right:14px;bottom:14px;display:inline-flex;gap:8px;align-items:center;padding:10px 16px;border-radius:999px;font:600 14px/1 var(--body);
+  background:var(--accent);color:var(--accent-ink);opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s var(--ease-out)}
+.slate:hover .shot .go,.slate:focus-visible .shot .go{opacity:1;transform:none}
+.slate-body{order:3;padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+.slate-body p{margin:0}
+.slate dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:14px}
+.slate dt{color:var(--muted)}
+.slate dd{margin:0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:4px}
+.visit{font-weight:600;color:var(--accent)}
+.private-shot{display:grid;place-items:center;text-align:center;padding:26px;background:var(--frame)}
+.ui-mock{width:min(86%,400px);display:grid;gap:10px;text-align:left}
+.ui-mock .row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 14px;border-radius:10px;background:rgba(234,241,245,.07);border:1px solid rgba(234,241,245,.16);color:var(--frame-ink)}
+.ui-mock .row i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.ui-mock .row span{font:600 14px/1.2 var(--body)}
+.ui-mock .row small{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+
+/* video cuts */
+.cuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cut{text-decoration:none;color:var(--ink);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;transition:transform .35s var(--ease-out),border-color .35s}
+.cut:hover{transform:translateY(-4px);border-color:var(--accent)}
+.poster{position:relative;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;background:var(--bg-art,var(--frame))}
+.poster::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px)}
+.poster .len{position:absolute;right:12px;bottom:12px;z-index:1;font:500 12px/1 var(--mono);padding:6px 9px;border-radius:6px;background:rgba(8,17,25,.75);color:#EAF1F5}
+.cut-body{padding:16px 18px 18px;display:grid;gap:6px}
+.cut-body .tag{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cut-body h3{font:800 24px/1 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
+.cut-body p{margin:0;color:var(--muted);font-size:15px}
+.cut-body .ask{font-weight:600;color:var(--accent);margin-top:4px;font-size:14px}
+
+/* next roll */
+.roll7{padding-block:80px 90px}
+.roll7-card{border-radius:18px;padding:clamp(30px,5vw,56px);background:var(--frame);color:var(--frame-ink);position:relative;overflow:hidden}
+.roll7-card::before{content:"";position:absolute;inset:0 0 auto;height:8px;opacity:.2;background:repeating-linear-gradient(-45deg,var(--frame-ink) 0 10px,transparent 10px 20px)}
+.roll7-card .eyebrow{color:var(--frame-ink);opacity:.8}
+.roll7-card h2{font:800 clamp(46px,7vw,92px)/.9 var(--display);text-transform:uppercase;margin:0 0 18px;max-width:13ch;text-wrap:balance}
+.roll7-card p{opacity:.85;max-width:36em;margin:0 0 26px;font-size:17px}
+footer{border-top:1px solid var(--line);padding-block:26px calc(26px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:14px;color:var(--muted)}
+
+.reveal{transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
+.js .reveal:not(.in){opacity:0;transform:translateY(22px)}
+@media (max-width:900px){ .grid,.cuts{grid-template-columns:minmax(0,1fr)} .caption{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:768px){ .strip{height:min(46vh,380px)} }
+@media (max-width:600px){ .brand-sub{display:none} .mast{padding-block:52px 16px} }
+@media (prefers-reduced-motion:reduce){ .reveal{transition:none} .js .reveal:not(.in){opacity:1;transform:none} .slate,.shot img,.cut{transition:none} }
+</style>
+</head>
+<body>
+<header class="topbar gutter">
+  <div class="wrap">
+    <a class="brand" href="https://intoalltheworldstudio.netlify.app/" aria-label="Into All The World Productions home">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span><span class="brand-word">Into All The World</span><span class="brand-sub">Productions · The Reel</span></span>
+    </a>
+    <a class="btn btn-go btn-sm" href="https://intoalltheworldstudio.netlify.app/">Talk to Maya</a>
+  </div>
+</header>
+
+<main>
+  <section class="mast gutter">
+    <div class="wrap">
+      <p class="eyebrow">The Reel · Homestead, FL</p>
+      <h1>The <em>Reel</em><br>Sites, apps &amp; AI we've shipped</h1>
+      <p class="lede">Websites, web apps and AI assistants built for real South Florida businesses. Every one of them is live, so open it and click around.</p>
+      <a class="btn btn-go" href="https://intoalltheworldstudio.netlify.app/">Start your project with Maya ↗</a>
+      <div class="credits"><span><b>8</b> builds</span><span><b>Websites</b> · Web apps · AI agents</span><span><b>English</b> &amp; <b>Español</b></span></div>
+    </div>
+  </section>
+
+  <section class="section gutter" id="work" aria-label="Live sites" style="padding-block:40px 60px">
+    <div class="wrap">
+      <div class="strip" id="strip">
+        <div class="strip-glow" aria-hidden="true"></div>
+        <div class="band" id="band" aria-hidden="true"></div>
+      </div>
+      <div class="caption" id="caption" aria-live="polite">
+        <div>
+          <div class="c-top"><h3 id="cap-name">Seven builds, live right now</h3><span class="status live" id="cap-status">Live</span></div>
+          <p id="cap-desc">Pool builders, lighting contractors, estheticians, exporters, cigar makers, a music movement and an AI app. Pick one below or catch it on the strip.</p>
+        </div>
+        <a class="btn btn-go open" id="cap-open" href="https://worldwidedistributorsinc.com/" target="_blank" rel="noopener">Open site ↗</a>
+      </div>
+      <nav class="chips" id="chips" aria-label="Open a client site"></nav>
+    </div>
+  </section>
+
+  <section class="rolls gutter" aria-labelledby="web">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 id="web">Websites</h2><p>Real businesses, real addresses.</p></div>
+      <div class="grid">
+        <a class="slate reveal" href="https://worldwidedistributorsinc.com/" target="_blank" rel="noopener" style="--stripe:#5b9bff;--glow:#5b9bff88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>worldwidedistributorsinc.com</b></span></div>
+          <div class="shot"><img src="assets/work/wwd.jpg" alt="Homepage of Worldwide Distributors" loading="lazy" decoding="async" style="object-position:top center"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 01</span><span>Miami, FL</span></div><h3>Worldwide Distributors</h3></div>
+          <div class="slate-body"><p>Company site for a lighting, electrical and construction firm, built to present every division under one contract.</p><dl><dt>Client</dt><dd>Worldwide Distributors Inc. / eLighting</dd><dt>Build</dt><dd>Multi-division company website</dd></dl>
+            <div class="foot"><span class="status live">Live</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://beautifyme-preview.netlify.app/" target="_blank" rel="noopener" style="--stripe:#a27dff;--glow:#a27dff88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>beautifyme-preview.netlify.app</b></span></div>
+          <div class="shot"><img src="assets/work/beautify.jpg" alt="Homepage of Beautify Me Facials" loading="lazy" decoding="async" style="object-position:left center"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 02</span><span>Palmetto Bay, FL</span></div><h3>Beautify Me Facials</h3></div>
+          <div class="slate-body"><p>Cinematic esthetician site with a before-and-after mirror visitors slide themselves, group Glow Session booking and membership plans.</p><dl><dt>Client</dt><dd>Beautify Me Facials &amp; More</dd><dt>Build</dt><dd>Cinematic site + booking flow</dd></dl>
+            <div class="foot"><span class="status preview">Preview</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://caribbeanexportersinc-v2.netlify.app/" target="_blank" rel="noopener" style="--stripe:#e8b65a;--glow:#e8b65a88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>caribbeanexportersinc-v2.netlify.app</b></span></div>
+          <div class="shot"><img src="assets/work/caribbean.jpg" alt="Homepage of Caribbean Exporters Inc." loading="lazy" decoding="async" style="object-position:top center"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 03</span><span>Miami, FL</span></div><h3>Caribbean Exporters Inc.</h3></div>
+          <div class="slate-body"><p>Version 2 of the redesign for a Miami procurement company supplying equipment, parts and supplies to government and business buyers across the Caribbean.</p><dl><dt>Client</dt><dd>Caribbean Exporters Inc.</dd><dt>Build</dt><dd>Site revamp + after-hours AI agent demo</dd></dl>
+            <div class="foot"><span class="status concept">Concept</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://heavens-leaf-site.netlify.app/" target="_blank" rel="noopener" style="--stripe:#e8b65a;--glow:#e8b65a88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>heavens-leaf-site.netlify.app</b></span></div>
+          <div class="shot"><img src="assets/work/heavens.jpg" alt="Homepage of Heaven's Leaf Cigar Co." loading="lazy" decoding="async" style="object-position:top center"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 04</span><span>Miami, FL</span></div><h3>Heaven's Leaf Cigar Co.</h3></div>
+          <div class="slate-body"><p>Scroll-driven brand story for a premium cigar maker, told in six chapters from seed in Estelí to cedar box, with a take-it-apart cigar breakdown and a merch shop.</p><dl><dt>Client</dt><dd>Heaven's Leaf Cigar Co.</dd><dt>Build</dt><dd>Cinematic chapter-scroll website</dd></dl>
+            <div class="foot"><span class="status concept">Concept</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://mgbrothers-pools.higgsfield.app/" target="_blank" rel="noopener" style="--stripe:#4fb7e8;--glow:#4fb7e888">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>mgbrothers-pools.higgsfield.app</b></span></div>
+          <div class="shot"><img src="assets/work/mg.jpg" alt="Homepage of M&amp;G Brothers Construction" loading="lazy" decoding="async"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 07</span><span>South Florida</span></div><h3>M&amp;G Brothers Construction</h3></div>
+          <div class="slate-body"><p>Luxury pool and outdoor-living site for a licensed South Florida builder, with 3D design before construction, financing and free site assessments.</p><dl><dt>Client</dt><dd>M&amp;G Brothers Construction, LLC</dd><dt>Build</dt><dd>Service site + lead capture</dd></dl>
+            <div class="foot"><span class="status preview">Preview</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://cubab459.com/" target="_blank" rel="noopener" style="--stripe:#e8b65a;--glow:#e8b65a88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>cubab459.com</b></span></div>
+          <div class="shot"><img src="assets/work/cuba.jpg" alt="Homepage of Cuba B459" loading="lazy" decoding="async"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 08</span><span>Miami, FL</span></div><h3>Cuba B459</h3></div>
+          <div class="slate-body"><p>Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying the story of Cuba before 1959 to a new generation.</p><dl><dt>Client</dt><dd>Cuba B459 / Tony Calatayud</dd><dt>Build</dt><dd>Cinematic artist + movement site</dd></dl>
+            <div class="foot"><span class="status live">Live</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rolls gutter" aria-labelledby="apps">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 id="apps">Apps &amp; AI</h2><p>Tools people use every day, on the phone in their pocket.</p></div>
+      <div class="grid">
+        <a class="slate reveal" href="https://cigarandpairingatlas.netlify.app/" target="_blank" rel="noopener" style="--stripe:#2fe2c2;--glow:#2fe2c288">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>cigarandpairingatlas.netlify.app</b></span></div>
+          <div class="shot"><img src="assets/work/atlas.jpg" alt="Homepage of Cigar &amp; Pairing Atlas" loading="lazy" decoding="async" style="object-position:top center"><span class="go">Open app ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 05</span><span>Mobile web app</span></div><h3>Cigar &amp; Pairing Atlas</h3></div>
+          <div class="slate-body"><p>AI pairing engine that matches cigars with spirits, coffee and cocktails, with voice search, photo ID and Spanish support.</p><dl><dt>Type</dt><dd>Consumer app with premium unlock</dd><dt>Stack</dt><dd>JavaScript, Cloudflare Workers, Claude, ElevenLabs</dd></dl>
+            <div class="foot"><span class="status live">Live</span><span class="visit">Open app ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://intoalltheworldstudio.netlify.app/" style="--stripe:#a0a6d2;--glow:#6d63ff88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">Private client app</span></div>
+          <div class="shot private-shot"><div class="ui-mock" aria-hidden="true">
+            <div class="row" style="--c:#5b9bff"><i></i><span>Ticket 1042 · Install</span><small>Intake</small></div>
+            <div class="row" style="--c:#e8b65a"><i></i><span>Ticket 1039 · Repair</span><small>On site</small></div>
+            <div class="row" style="--c:#2fe2c2"><i></i><span>Ticket 1031 · Service</span><small>Closed</small></div>
+          </div><span class="go">Ask Maya for a demo ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 06</span><span>Field ops system</span></div><h3>Work Order System</h3></div>
+          <div class="slate-body"><p>Replaced a wall of paper tickets for a 15-person crew: phone app for technicians, office dashboard, voice notes with translation, and ticket scanning.</p>
+            <dl><dt>Client</dt><dd>Worldwide Distributors Inc.</dd><dt>Stack</dt><dd>Supabase, offline sync, voice capture</dd></dl>
+            <div class="foot"><span class="status private">Private client app</span><span class="visit">Demo on request</span></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rolls gutter" aria-labelledby="video">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 id="video">Video &amp; AI production</h2><p>Commercials and explainers, written, voiced and cut in-house.</p></div>
+      <div class="cuts">
+        <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
+          <div class="poster" style="--bg-art:radial-gradient(90% 90% at 30% 20%,#1f6f8b,#0a2233 60%,#05101a)"><span class="len">1:16</span></div>
+          <div class="cut-body"><span class="tag">Commercial</span><h3>M&amp;G Brothers Construction</h3><p>Pool construction spot with AI narration and a full build timelapse.</p><span class="ask">Full cut on request ↗</span></div>
+        </a>
+        <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
+          <div class="poster" style="--bg-art:radial-gradient(90% 90% at 70% 30%,#3a3fb0,#12154a 60%,#070820)"><span class="len">1:02</span></div>
+          <div class="cut-body"><span class="tag">Explainer</span><h3>Worldwide Distributors</h3><p>How their crew's new work order app replaces paper tickets.</p><span class="ask">Full cut on request ↗</span></div>
+        </a>
+        <a class="cut reveal" href="https://intoalltheworldstudio.netlify.app/">
+          <div class="poster" style="--bg-art:radial-gradient(90% 90% at 40% 30%,#7a9a3a,#2c3f14 60%,#0f1607)"><span class="len">0:20</span></div>
+          <div class="cut-body"><span class="tag">Commercial</span><h3>Yes2Detox</h3><p>A golden-hour morning reset for a cold-pressed juice brand.</p><span class="ask">Full cut on request ↗</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="roll7 gutter" aria-labelledby="r7">
+    <div class="wrap">
+      <div class="roll7-card reveal">
+        <p class="eyebrow">Next on the reel</p>
+        <h2 id="r7">Your business could be Roll 09.</h2>
+        <p>Talk or type with Maya, our project intake assistant. She'll ask about your business and goals, and Ferron will follow up within one business day with a recommended plan.</p>
+        <a class="btn btn-go btn-xl" href="https://intoalltheworldstudio.netlify.app/">Talk to Maya ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="gutter">
+  <div class="wrap"><span>Into All The World Productions · Ferron Hartshorn · South Florida</span><span>English &amp; Español</span></div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var MOBILE = window.matchMedia('(max-width: 768px)').matches;
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* ---------- our work: curved strip ---------- */
+  (function(){
+    var strip = document.getElementById('strip'), band = document.getElementById('band');
+    if (!strip || !band) return;
+    var SITES = [
+      {name:'Worldwide Distributors', url:'https://worldwidedistributorsinc.com', img:'assets/work/wwd.jpg', st:'live', label:'Live', dot:'#5b9bff',
+       desc:'Miami · One site for a lighting, electrical and construction firm, with every division under one contract.'},
+      {name:'M&G Brothers Construction', url:'https://mgbrothers-pools.higgsfield.app/', img:'assets/work/mg.jpg', st:'preview', label:'Preview', dot:'#4fb7e8',
+       desc:'South Florida · Luxury pools and outdoor living, with 3D design before construction, financing and free site assessments.'},
+      {name:'Cuba B459', url:'https://cubab459.com/', img:'assets/work/cuba.jpg', st:'live', label:'Live', dot:'#e8b65a',
+       desc:"Miami · Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying Cuba's story to a new generation."},
+      {name:'Beautify Me Facials', url:'https://beautifyme-preview.netlify.app', img:'assets/work/beautify.jpg', st:'preview', label:'Preview', dot:'#a27dff', pos:'left center',
+       desc:'Palmetto Bay · Cinematic esthetician site with a before-and-after mirror visitors slide themselves, Glow Session booking and memberships.'},
+      {name:'Caribbean Exporters Inc.', url:'https://caribbeanexportersinc-v2.netlify.app/', img:'assets/work/caribbean.jpg', st:'concept', label:'Concept', dot:'#e8b65a',
+       desc:'Miami · Version 2 of the redesign for a procurement and export company supplying government and business buyers across the Caribbean.'},
+      {name:"Heaven's Leaf Cigar Co.", url:'https://heavens-leaf-site.netlify.app', img:'assets/work/heavens.jpg', st:'concept', label:'Concept', dot:'#e8b65a',
+       desc:'Miami · A six-chapter scroll story for a premium cigar maker, with a cigar breakdown and a merch shop.'},
+      {name:'Cigar & Pairing Atlas', url:'https://cigarandpairingatlas.netlify.app', img:'assets/work/atlas.jpg', st:'live', label:'Live app', dot:'#2fe2c2',
+       desc:'Mobile web app · AI that pairs any cigar with spirits, coffee and cocktails. Voice search, photo ID and Spanish built in.'}
+    ];
+    var PRIVATE = {name:'Work Order System', url:'https://intoalltheworldstudio.netlify.app/', st:'private', label:'Private',
+       desc:'Field operations · Replaced paper tickets for a 15-person crew: technician app, office dashboard, voice notes with translation. Demo on request.', dot:'#a0a6d2', cta:'Ask Maya for a demo ↗'};
+
+    // geometry (ported from the tilted-grid hero): camera distance in cylinder radii, slices per tile
+    var SLICES = MOBILE ? 6 : 8, CAMERA = 1.6, MAX_WIDTH = 55;
+    var SPEED = 4.5, TILE_H = 42, ASPECT = 16/10, GAP = 7, AXIS = 50, CURVE = 70, FADE = 12;
+    var bend = CURVE * Math.PI / 180;
+    function arc(b){ return (CAMERA - 1 + Math.cos(b)) / (2 * CAMERA * Math.sin(b)); }
+    function measure(w, h){
+      var th = Math.min(TILE_H/100*h, MAX_WIDTH/100*w/ASPECT), radius = w*arc(bend);
+      if (!(th > 0) || !(radius > 0)) return null;
+      var deg = function(r){ return r*180/Math.PI; };
+      var unit = deg(th/radius), pitch = (ASPECT + GAP/100)*unit, limit = deg(bend) + ASPECT*unit/2;
+      var cols = Math.min(40, Math.max(2, Math.ceil(2*limit/pitch)));
+      var r4 = function(n){ return +n.toFixed(4); };
+      var sweep = r4(cols*pitch/2);
+      return {cols:cols, sweep:sweep, unit:r4(unit), limit:r4(Math.min(sweep, limit))};
+    }
+    var R = 100*arc(bend), RADIUS = R.toFixed(3) + 'cqw';
+    function u(n){ return 'calc(' + (+n.toFixed(4)) + ' * min(' + TILE_H + 'cqh, ' + (+(MAX_WIDTH/ASPECT).toFixed(4)) + 'cqw))'; }
+    function turn(d){ return 'translateZ(' + RADIUS + ') rotateY(' + (+d.toFixed(4)) + 'deg) translateZ(-' + RADIUS + ')'; }
+    band.style.perspective = (R*CAMERA).toFixed(3) + 'cqw';
+    band.style.perspectiveOrigin = '50% ' + AXIS + '%';
+    var mask = 'linear-gradient(90deg,transparent,#000 ' + FADE + '%,#000 ' + (100-FADE) + '%,transparent)';
+    strip.style.setProperty('--fade', FADE + '%');
+    var styleEl = document.createElement('style'); document.head.appendChild(styleEl);
+
+    var tiles = [], COLS = 0, DUR = 1;
+    function setTile(a, n){
+      var site = SITES[((n % SITES.length) + SITES.length) % SITES.length]; a._n = n;
+      a.href = site.url; a.setAttribute('aria-label', site.name);
+      a.querySelectorAll('img').forEach(function(im){ if (im.getAttribute('src') !== site.img) im.src = site.img; im.style.objectPosition = site.pos || 'top center'; });
+    }
+    var key = '';
+    function build(L){
+      var k = L.cols + '|' + L.sweep + '|' + L.unit; if (k === key) return; key = k;
+      var hide = +(((L.sweep - L.limit) / (2*L.sweep || 1)) * 100).toFixed(4);
+      styleEl.textContent = '@keyframes wbw-orbit{from{transform:' + turn(-L.sweep) + '}to{transform:' + turn(L.sweep) + '}' +
+        '0%,' + hide + '%,' + (100-hide) + '%,100%{visibility:hidden}' + (hide+0.001) + '%,' + (100-hide-0.001) + '%{visibility:visible}}' +
+        '@media(prefers-reduced-motion:reduce){.tile{animation-play-state:paused!important}}';
+      band.innerHTML = ''; tiles = []; COLS = L.cols; DUR = L.cols * SPEED * 1000;
+      var share = ASPECT / SLICES, duration = L.cols * SPEED;
+      for (var t=0; t<L.cols; t++){
+        var first = L.cols - 1 - t;
+        var a = document.createElement('a'); a.className = 'tile'; a.target = '_blank'; a.rel = 'noopener'; a.tabIndex = -1; a.draggable = false;
+        a.style.left = 'calc(50% - ' + u(ASPECT/2) + ')'; a.style.top = 'calc(' + AXIS + '% - ' + u(0.5) + ')';
+        a.style.width = u(ASPECT); a.style.height = u(1);
+        a.style.animation = 'wbw-orbit ' + duration + 's linear ' + (-t*SPEED) + 's infinite';
+        for (var j=0; j<SLICES; j++){
+          var sl = document.createElement('div'); sl.className = 'slice' + (j===0 ? ' l' : '') + (j===SLICES-1 ? ' r' : '');
+          sl.style.left = u((ASPECT - share)/2);
+          sl.style.width = j === SLICES-1 ? u(share) : 'calc(' + u(share) + ' + 1px)';
+          sl.style.height = u(1);
+          sl.style.transform = turn((ASPECT/2 - (j+0.5)*share) * L.unit);
+          var im = document.createElement('img'); im.alt = ''; im.draggable = false; im.decoding = 'async';
+          im.style.left = u(-j*share); im.style.width = u(ASPECT); im.style.height = u(1);
+          sl.appendChild(im); a.appendChild(sl);
+        }
+        (function(a){
+          a.addEventListener('mouseenter', function(){ overTile = true; show(SITES[((a._n % SITES.length) + SITES.length) % SITES.length]); });
+          a.addEventListener('mouseleave', function(){ overTile = false; });
+        })(a);
+        setTile(a, first);
+        band.appendChild(a);
+        var anim = a.getAnimations ? a.getAnimations()[0] : null;
+        // park every tile hundreds of laps in, so it can run backwards without hitting the start
+        if (anim){ anim.currentTime = (anim.currentTime || 0) + DUR * 400; setTile(a, Math.floor(anim.currentTime / DUR) * L.cols + first); }
+        tiles.push({a:a, first:first, anim:anim});
+      }
+      band.classList.add('ready');
+    }
+    SITES.forEach(function(s){ new Image().src = s.img; });
+    if ('ResizeObserver' in window){
+      new ResizeObserver(function(es){ var r = es[0].contentRect; var L = measure(r.width, r.height); if (L) build(L); }).observe(strip);
+    } else { var L0 = measure(strip.clientWidth, strip.clientHeight); if (L0) build(L0); }
+
+    // caption + chips
+    var cap = document.getElementById('caption'), cn = document.getElementById('cap-name'), cs = document.getElementById('cap-status'),
+        cd = document.getElementById('cap-desc'), co = document.getElementById('cap-open'), chips = document.getElementById('chips');
+    function show(site){
+      cn.textContent = site.name; cs.textContent = site.label; cs.className = 'status ' + site.st;
+      cd.textContent = site.desc; co.href = site.url; co.textContent = site.cta || 'Open site ↗';
+      cap.classList.add('on');
+      Array.prototype.forEach.call(chips.children, function(c){ c.setAttribute('aria-current', c._site === site ? 'true' : 'false'); });
+    }
+    SITES.concat([PRIVATE]).forEach(function(site){
+      var c = document.createElement('a'); c.className = 'chip'; c.href = site.url; c.target = '_blank'; c.rel = 'noopener';
+      c.style.setProperty('--dot', site.dot); c._site = site;
+      c.innerHTML = '<i></i>'; c.appendChild(document.createTextNode(site.name));
+      c.addEventListener('mouseenter', function(){ show(site); }); c.addEventListener('focus', function(){ show(site); });
+      chips.appendChild(c);
+    });
+
+    /* mouse: steer speed with the cursor, grab and fling, camera and glow follow the pointer */
+    var glow = strip.querySelector('.strip-glow');
+    var rate = 1, target = 1, mx = 0.5, my = 0.5, ox = 0.5, oy = 0.5, inside = false, overTile = false;
+    var pid = null, captured = false;
+    var dragging = false, moved = 0, lastX = 0, lastT = 0, dragRate = 0, coast = null, visible = true, looping = false;
+    function tilePx(){ var w = strip.clientWidth, h = strip.clientHeight; return Math.min(TILE_H/100*h, MAX_WIDTH/100*w/ASPECT) * ASPECT; }
+    function local(e){ var r = strip.getBoundingClientRect(); mx = (e.clientX - r.left)/r.width; my = (e.clientY - r.top)/r.height; }
+    strip.addEventListener('pointermove', function(e){
+      local(e); inside = true;
+      if (!dragging) return;
+      var now = performance.now(), dx = e.clientX - lastX, dt = Math.max(8, now - lastT);
+      moved += Math.abs(dx);
+      if (moved > 6){
+        strip.classList.add('dragging');
+        // capture only once it is really a drag; capturing on press would steal the click from the tile's link
+        if (!captured){ try { strip.setPointerCapture(pid); } catch(_){} captured = true; }
+      }
+      // follow the finger: px per ms -> tiles per second, relative to the strip's normal pace
+      var inst = (-dx/dt) / (tilePx() / (SPEED*1000));
+      dragRate = dragRate*0.6 + inst*0.4;
+      lastX = e.clientX; lastT = now;
+    });
+    strip.addEventListener('pointerdown', function(e){
+      dragging = true; moved = 0; dragRate = rate; coast = null; lastX = e.clientX; lastT = performance.now(); pid = e.pointerId; captured = false;
+    });
+    function release(){ if (!dragging) return; dragging = false; strip.classList.remove('dragging'); coast = Math.max(-14, Math.min(14, dragRate)); }
+    strip.addEventListener('pointerup', release); strip.addEventListener('pointercancel', release);
+    strip.addEventListener('pointerleave', function(){ inside = false; overTile = false; });
+    band.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    // a drag never opens a site; a clean click does
+    band.addEventListener('click', function(e){ if (moved > 6){ e.preventDefault(); e.stopPropagation(); } }, true);
+
+    function loop(){
+      if (!visible){ looping = false; return; }
+      if (dragging) target = dragRate;
+      else if (coast !== null){ coast = coast*0.95 + 0.05; target = coast; if (Math.abs(coast - 1) < 0.02) coast = null; }
+      else if (overTile) target = 0;
+      else if (inside) target = 0.35 + (mx - 0.5) * 2 * 2.6;   // left edge runs it backwards, right edge races it
+      else target = 1;
+      rate += (target - rate) * (dragging ? 0.5 : 0.08);
+      for (var i=0; i<tiles.length; i++){
+        var T = tiles[i], an = T.anim; if (!an) continue;
+        if (Math.abs(an.playbackRate - rate) > 0.004) an.playbackRate = rate;
+        var lap = Math.floor((an.currentTime || 0) / DUR), n = lap*COLS + T.first;
+        if (n !== T.a._n) setTile(T.a, n);
+      }
+      var tx = inside ? mx : 0.5, ty = inside ? my : 0.5;
+      ox += (tx - ox) * 0.06; oy += (ty - oy) * 0.06;
+      band.style.perspectiveOrigin = (50 + (ox - 0.5)*18).toFixed(2) + '% ' + (AXIS + (oy - 0.5)*16).toFixed(2) + '%';
+      glow.style.left = (50 + (ox - 0.5)*70).toFixed(2) + '%'; glow.style.top = (50 + (oy - 0.5)*50).toFixed(2) + '%';
+      requestAnimationFrame(loop);
+    }
+    function start(){ if (!looping && !REDUCED){ looping = true; requestAnimationFrame(loop); } }
+
+    // only animate while the strip is on screen, so it never competes with the film
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        visible = es[0].isIntersecting; band.classList.toggle('paused', !visible); if (visible) start();
+      }, {rootMargin:'100px'}).observe(strip);
+    } else start();
+  })();
+
+  
+  var io = 'IntersectionObserver' in window && !REDUCED ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -10% 0px', threshold:.08}) : null;
+  document.querySelectorAll('.reveal').forEach(function(el){ if (io) io.observe(el); else el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>
