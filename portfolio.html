@@ -122,6 +122,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .sec-head h2{font:800 clamp(40px,5vw,64px)/.9 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}
 .sec-head p{color:var(--muted);margin:0;max-width:28em}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media (min-width:901px){ .grid>.slate:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 11px)} }
 .slate{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);
   text-decoration:none;color:var(--ink);transition:transform .35s var(--ease-out),box-shadow .35s,border-color .35s}
 .slate:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 30px 50px -36px var(--shade)}
@@ -208,7 +209,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
       <h1>The <em>Reel</em><br>Sites, apps &amp; AI we've shipped</h1>
       <p class="lede">Websites, web apps and AI assistants built for real South Florida businesses. Every one of them is live, so open it and click around.</p>
       <a class="btn btn-go" href="https://intoalltheworldstudio.netlify.app/">Start your project with Maya ↗</a>
-      <div class="credits"><span><b>8</b> builds</span><span><b>Websites</b> · Web apps · AI agents</span><span><b>English</b> &amp; <b>Español</b></span></div>
+      <div class="credits"><span><b>9</b> builds</span><span><b>Websites</b> · Web apps · AI agents</span><span><b>English</b> &amp; <b>Español</b></span></div>
     </div>
   </section>
 
@@ -220,8 +221,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
       </div>
       <div class="caption" id="caption" aria-live="polite">
         <div>
-          <div class="c-top"><h3 id="cap-name">Seven builds, live right now</h3><span class="status live" id="cap-status">Live</span></div>
-          <p id="cap-desc">Pool builders, lighting contractors, estheticians, exporters, cigar makers, a music movement and an AI app. Pick one below or catch it on the strip.</p>
+          <div class="c-top"><h3 id="cap-name">Eight builds, live right now</h3><span class="status live" id="cap-status">Live</span></div>
+          <p id="cap-desc">Pool builders, an AC company, lighting contractors, estheticians, exporters, cigar makers, a music movement and an AI app. Pick one below or catch it on the strip.</p>
         </div>
         <a class="btn btn-go open" id="cap-open" href="https://worldwidedistributorsinc.com/" target="_blank" rel="noopener">Open site ↗</a>
       </div>
@@ -274,6 +275,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
           <div class="slate-head"><div class="slate-meta"><span>Roll 08</span><span>Miami, FL</span></div><h3>Cuba B459</h3></div>
           <div class="slate-body"><p>Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying the story of Cuba before 1959 to a new generation.</p><dl><dt>Client</dt><dd>Cuba B459 / Tony Calatayud</dd><dt>Build</dt><dd>Cinematic artist + movement site</dd></dl>
             <div class="foot"><span class="status live">Live</span><span class="visit">Visit site ↗</span></div></div>
+        </a>
+        <a class="slate reveal" href="https://nel-sons-eric-review.netlify.app/" target="_blank" rel="noopener" style="--stripe:#c9a46a;--glow:#c9a46a88">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://<b>nel-sons-eric-review.netlify.app</b></span></div>
+          <div class="shot"><img src="assets/work/nelsons.jpg" alt="Homepage of Nel &amp; Sons Air Conditioning" loading="lazy" decoding="async"><span class="go">Visit site ↗</span></div>
+          <div class="slate-head"><div class="slate-meta"><span>Roll 09</span><span>Miami-Dade &amp; Broward</span></div><h3>Nel &amp; Sons Air Conditioning</h3></div>
+          <div class="slate-body"><p>Luxury residential HVAC site for South Florida estates, with a cinematic scroll through a waterfront home, an interactive 3D look inside an AC unit, and English and Spanish.</p><dl><dt>Client</dt><dd>Nel &amp; Sons Air Conditioning</dd><dt>Build</dt><dd>Cinematic scroll site + 3D</dd></dl>
+            <div class="foot"><span class="status preview">Preview</span><span class="visit">Visit site ↗</span></div></div>
         </a>
       </div>
     </div>
@@ -338,7 +346,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
     <div class="wrap">
       <div class="roll7-card reveal">
         <p class="eyebrow">Next on the reel</p>
-        <h2 id="r7">Your business could be Roll 09.</h2>
+        <h2 id="r7">Your business could be Roll 10.</h2>
         <p>Talk or type with Maya, our project intake assistant. She'll ask about your business and goals, and Ferron will follow up within one business day with a recommended plan.</p>
         <a class="btn btn-go btn-xl" href="https://intoalltheworldstudio.netlify.app/">Talk to Maya ↗</a>
       </div>
@@ -382,6 +390,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
        desc:'Miami · One site for a lighting, electrical and construction firm, with every division under one contract.'},
       {name:'M&G Brothers Construction', url:'https://mgbrothers-pools.higgsfield.app/', img:'assets/work/mg.jpg', st:'preview', label:'Preview', dot:'#4fb7e8',
        desc:'South Florida · Luxury pools and outdoor living, with 3D design before construction, financing and free site assessments.'},
+      {name:'Nel & Sons Air Conditioning', url:'https://nel-sons-eric-review.netlify.app/', img:'assets/work/nelsons.jpg', st:'preview', label:'Preview', dot:'#c9a46a',
+       desc:'Miami-Dade & Broward · Luxury HVAC for South Florida homes, with a cinematic estate fly-through, an interactive 3D AC unit and English/Spanish.'},
       {name:'Cuba B459', url:'https://cubab459.com/', img:'assets/work/cuba.jpg', st:'live', label:'Live', dot:'#e8b65a',
        desc:"Miami · Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying Cuba's story to a new generation."},
       {name:'Beautify Me Facials', url:'https://beautifyme-preview.netlify.app', img:'assets/work/beautify.jpg', st:'preview', label:'Preview', dot:'#a27dff', pos:'left center',
