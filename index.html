@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-title-es="Comience su proyecto · Into All The World Productions">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Start Your Project · Into All The World Productions</title>
+<meta name="description" content="Websites, web apps, and AI assistants for local businesses in South Florida. Start your project with a conversation with Maya." data-es-content="Sitios web, aplicaciones web y asistentes de IA para negocios locales en el Sur de Florida. Comience su proyecto con una conversación con Maya.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Into All The World Productions">
+<meta property="og:title" content="Start Your Project · Into All The World Productions">
+<meta property="og:description" content="Websites, web apps, and AI assistants for local businesses in South Florida. Start your project with a conversation with Maya.">
+<meta property="og:url" content="https://intoalltheworldstudio.netlify.app/">
+<meta property="og:image" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta property="og:image:secure_url" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Into All The World Productions. Tell us what you need built. Websites, web apps and AI assistants. South Florida.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start Your Project · Into All The World Productions">
+<meta name="twitter:description" content="Websites, web apps, and AI assistants for local businesses in South Florida. Start your project with a conversation with Maya.">
+<meta name="twitter:image" content="https://intoalltheworldstudio.netlify.app/assets/social-preview.png">
+<meta name="twitter:image:alt" content="Into All The World Productions. Tell us what you need built. Websites, web apps and AI assistants. South Florida.">
+<link rel="alternate" hreflang="en" href="https://intoalltheworldstudio.netlify.app/?lang=en">
+<link rel="alternate" hreflang="es" href="https://intoalltheworldstudio.netlify.app/?lang=es">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root { --bg: #EEF2F4; --surface: #FFFFFF; --ink: #10202B; --muted: #4F6370; --line: #D3DDE3; --accent: #A8781F; --accent-ink: #FFFFFF; --frame: #13293A; --frame-ink: #EAF1F5; --frame-muted: #A9BCC8; --display: "Big Shoulders Display","Arial Narrow",Impact,sans-serif; --body: "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif; --mono: "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0B1720; --surface: #112330; --ink: #E7EEF2; --muted: #9DB0BC; --line: #21394A; --accent: #D9A64A; --accent-ink: #14110C; --frame: #081119; --frame-ink: #EAF1F5; --frame-muted: #8FA3B0; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0B1720; --surface: #112330; --ink: #E7EEF2; --muted: #9DB0BC; --line: #21394A; --accent: #D9A64A; --accent-ink: #14110C; --frame: #081119; --frame-ink: #EAF1F5; --frame-muted: #8FA3B0; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 20px 64px; display: grid; gap: 56px; }
+.topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lang-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.lang-toggle button { font: 500 12px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; border: 0; background: transparent; color: var(--muted); padding: 8px 12px; border-radius: 999px; cursor: pointer; min-height: 32px; }
+.lang-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 36px; align-items: center; }
+@media (max-width: 820px) { .hero { grid-template-columns: 1fr; } }
+.hero-copy { display: grid; gap: 18px; min-width: 0; }
+.studio { color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(46px, 8vw, 92px); line-height: 0.92; margin: 0; text-transform: uppercase; letter-spacing: 0.01em; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 52ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1px solid var(--line); font-size: 16px; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn:hover { filter: brightness(1.06); }
+.small { font-size: 14px; color: var(--muted); }
+.console { background: var(--frame); color: var(--frame-ink); border-radius: 20px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.console-top { display: flex; justify-content: space-between; align-items: center; color: var(--frame-muted); }
+.rec { display: inline-flex; align-items: center; gap: 8px; }
+.rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+@media (prefers-reduced-motion: no-preference) { .rec i { animation: pulse 1.6s ease-in-out infinite; } }
+@keyframes pulse { 50% { opacity: 0.35; } }
+.msg { display: grid; gap: 4px; max-width: 92%; }
+.msg .who { color: var(--frame-muted); }
+.msg p { margin: 0; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.07); line-height: 1.5; }
+.msg.you { justify-self: end; }
+.msg.you p { background: var(--accent); color: var(--accent-ink); }
+.modes { display: flex; gap: 8px; flex-wrap: wrap; }
+.mode { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); color: var(--frame-ink); }
+section { display: grid; gap: 22px; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 34px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+.step .n { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; color: var(--accent); }
+.step h3 { margin: 0; font-size: 18px; }
+.step p { margin: 0; color: var(--muted); }
+.agenda { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0 40px; border-top: 1px solid var(--line); }
+.agenda div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.agenda .mono { color: var(--muted); padding-top: 3px; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+.panel { border-radius: 16px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+.panel.dark { background: var(--frame); color: var(--frame-ink); }
+.panel.light { background: var(--surface); border: 1px solid var(--line); }
+.panel h3 { font-family: var(--display); font-weight: 800; font-size: 28px; text-transform: uppercase; margin: 0; letter-spacing: 0.01em; }
+.panel p { margin: 0; }
+.panel ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.panel.dark .muted { color: var(--frame-muted); }
+footer { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="topline">
+        <div class="mono studio" data-es="Into All The World Productions · Sur de Florida">Into All The World Productions · South Florida</div>
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">English</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">Español</button>
+        </div>
+      </div>
+      <h1 data-es="Cuéntenos qué <span>necesita construir</span>">Tell us what you <span>need built</span></h1>
+      <p class="lede" data-es="Sitios web, aplicaciones web y asistentes de IA para negocios locales. Empiece con una conversación de 10 minutos con Maya, nuestra asistente de admisión. Hable en voz alta o escriba, como le resulte más fácil.">Websites, web apps, and AI assistants for local businesses. Start with a 10-minute conversation with Maya, our intake assistant. Talk out loud or type, whichever is easier.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://elevenlabs.io/app/talk-to?agent_id=agent_5801m4gd9dk5ebprrkc65xv7m5as" target="_blank" rel="noopener" data-es="Hable o escriba con Maya ↗">Talk or type with Maya ↗</a>
+        <a class="btn" href="https://intoalltheworldstudio.netlify.app/portfolio" data-es="Vea nuestro trabajo">See our work</a>
+      </div>
+      <p class="small" data-es="Sin formularios, sin discurso de ventas. Ferron revisa cada conversación personalmente y responde en un día hábil.">No forms, no sales pitch. Ferron reviews every conversation personally and replies within one business day.</p>
+    </div>
+
+    <div class="console" aria-label="Example of a conversation with Maya" data-es-aria-label="Ejemplo de una conversación con Maya">
+      <div class="console-top mono"><span class="rec"><i></i> <span data-es="Maya · Admisión de proyectos">Maya · Project intake</span></span><span>~10 min</span></div>
+      <div class="msg"><span class="mono who">Maya</span><p data-es="Hola, soy Maya. ¿Cuál es su nombre y el nombre de su negocio?">Hi, I'm Maya. What's your name and the name of your business?</p></div>
+      <div class="msg you"><span class="mono who" data-es="Usted">You</span><p data-es="Carlos, tengo una compañía de aire acondicionado en Miami.">Carlos, I run an AC company in Miami.</p></div>
+      <div class="msg"><span class="mono who">Maya</span><p data-es="Gracias, Carlos. ¿Qué le hizo comunicarse hoy? ¿Qué no está funcionando como le gustaría?">Thanks, Carlos. What made you reach out today? What's not working the way you'd like?</p></div>
+      <div class="msg you"><span class="mono who" data-es="Usted">You</span><p data-es="Perdemos llamadas después de las 6pm y esos trabajos se los lleva otro.">We miss calls after 6pm and those jobs go to someone else.</p></div>
+      <div class="msg"><span class="mono who">Maya</span><p data-es="Entendido. Más o menos, ¿cuántas de esas llamadas cree que pierde por semana?">Got it. Roughly how many of those calls do you think you lose in a week?</p></div>
+      <div class="modes"><span class="mode" data-es="🎙 Hablar">🎙 Talk</span><span class="mode" data-es="⌨ Escribir">⌨ Type</span><span class="mode">English · Español</span></div>
+    </div>
+  </div>
+
+  <section aria-labelledby="how">
+    <h2 id="how" data-es="Cómo funciona">How it works</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3 data-es="Converse con Maya">Chat with Maya</h3><p data-es="Le pregunta sobre su negocio, qué se interpone en su camino y qué le gustaría construir. Diga &quot;no estoy seguro&quot; cuando quiera.">She asks about your business, what's getting in the way, and what you'd like to have built. Say "not sure" any time.</p></div>
+      <div class="step"><span class="n">2</span><h3 data-es="Ferron revisa su resumen">Ferron reviews your brief</h3><p data-es="Sus respuestas se convierten en un resumen del proyecto: metas, funciones imprescindibles, estilo, plazo y presupuesto.">Your answers become a project brief: goals, must-have features, look and feel, timeline and budget.</p></div>
+      <div class="step"><span class="n">3</span><h3 data-es="Usted recibe un plan">You get a plan</h3><p data-es="En un día hábil, Ferron le da seguimiento por llamada, texto o correo con ideas y un camino recomendado.">Within one business day, Ferron follows up by call, text or email with ideas and a recommended path.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ask">
+    <h2 id="ask" data-es="Lo que Maya le preguntará">What Maya will ask about</h2>
+    <div class="agenda">
+      <div><span class="mono" data-es="Hoy">Today</span><span data-es="A qué se dedica su negocio, quiénes son sus clientes y qué usa actualmente">What your business does, who your customers are, and what you use now</span></div>
+      <div><span class="mono" data-es="El problema">The problem</span><span data-es="Qué está roto, lento o faltando, y cuánto le está costando">What's broken, slow or missing, and what it's costing you</span></div>
+      <div><span class="mono" data-es="La meta">The goal</span><span data-es="Qué sería diferente dentro de seis meses si esto se resolviera">What would be different six months from now if this were solved</span></div>
+      <div><span class="mono" data-es="El proyecto">The build</span><span data-es="Sitio web, aplicación, asistente de IA telefónico o de chat, automatización, o aún no sabe">Website, app, AI phone or chat assistant, automation, or not sure yet</span></div>
+      <div><span class="mono" data-es="Estilo">Look &amp; feel</span><span data-es="Su marca, sus colores y uno o dos sitios que le gusten">Your brand, colors, and a site or two you like</span></div>
+      <div><span class="mono" data-es="Logística">Logistics</span><span data-es="Plazo, rango de presupuesto y la mejor forma de contactarle">Timeline, budget range, and the best way to reach you</span></div>
+    </div>
+  </section>
+
+  <div class="split">
+    <div class="panel dark">
+      <span class="mono muted" data-es="Lo que construimos">What we build</span>
+      <h3 data-es="De una página a un sistema completo">From a page to a whole system</h3>
+      <ul>
+        <li data-es="Sitios web y páginas de aterrizaje cinematográficos">Cinematic websites and landing pages</li>
+        <li data-es="Aplicaciones web y portales de clientes">Web apps and client portals</li>
+        <li data-es="Asistentes de IA telefónicos y de chat 24/7 que agendan y dan seguimiento">24/7 AI phone and chat assistants that book and follow up</li>
+        <li data-es="Automatizaciones que reemplazan el papel y las hojas de cálculo">Automations that replace paper and spreadsheets</li>
+      </ul>
+    </div>
+    <div class="panel light">
+      <span class="mono" style="color:var(--muted)" data-es="Pruebas">Proof</span>
+      <h3 data-es="Vea el reel">See the reel</h3>
+      <p data-es="Sitios, aplicaciones y agentes de IA creados para contratistas, esteticistas, distribuidores y exportadores en todo el Sur de Florida.">Sites, apps and AI agents built for contractors, estheticians, distributors and exporters across South Florida.</p>
+      <div class="actions"><a class="btn" href="https://intoalltheworldstudio.netlify.app/portfolio" data-es="Ver portafolio ↗">View portfolio ↗</a></div>
+    </div>
+  </div>
+
+  <footer data-es="Into All The World Productions · Ferron Hartshorn · Sur de Florida">Into All The World Productions · Ferron Hartshorn · South Florida</footer>
+</div>
+
+<script>
+/* ===== Language toggle (English / Español) =====
+   Every translatable element carries its Spanish in data-es (inner HTML), and attributes in
+   data-es-aria-label / data-es-alt / data-es-content / data-es-title. English is cached from the page itself.
+   Choice order: ?lang= in the URL, then the visitor's saved choice, then their browser language. */
+(function(){
+  var KEY='iatw-lang', root=document.documentElement;
+  function saved(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function save(l){ try{ localStorage.setItem(KEY,l); }catch(e){} }
+  var q=(location.search.match(/[?&]lang=(en|es)\b/)||[])[1];
+  var lang=q||saved()||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
+  var ATTRS=['aria-label','alt','content','title','placeholder'];
+  function apply(l){
+    lang=l; root.lang=l; root.setAttribute('data-lang',l);
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      if(el._en===undefined) el._en=el.innerHTML;
+      el.innerHTML = l==='es' ? el.getAttribute('data-es') : el._en;
+    });
+    ATTRS.forEach(function(a){
+      document.querySelectorAll('[data-es-'+a+']').forEach(function(el){
+        var k='_en_'+a; if(el[k]===undefined) el[k]=el.getAttribute(a)||'';
+        el.setAttribute(a, l==='es' ? el.getAttribute('data-es-'+a) : el[k]);
+      });
+    });
+    if(document.title && root.dataset.titleEs){ if(!root._titleEn) root._titleEn=document.title; document.title = l==='es' ? root.dataset.titleEs : root._titleEn; }
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===l ? 'true':'false'); });
+    window.dispatchEvent(new CustomEvent('iatw:lang',{detail:l}));
+  }
+  window.IATW_LANG=function(){ return lang; };
+  document.addEventListener('click',function(e){
+    var b=e.target.closest && e.target.closest('.lang-toggle button'); if(!b) return;
+    save(b.dataset.lang); apply(b.dataset.lang);
+  });
+  apply(lang);
+})();
+</script>
+
+<!-- Maya voice + text widget. Loads only when this page is hosted on its own site (e.g. Netlify);
+     inside a preview frame the button above opens Maya in a new tab instead.
+     In Spanish mode the widget starts Maya in Spanish (agent language override + Spanish preset). -->
+<script>
+(function(){
+  var topLevel=false; try{topLevel=window.top===window.self}catch(e){}
+  if(!topLevel) return;
+  var AGENT='agent_5801m4gd9dk5ebprrkc65xv7m5as';
+  var ES={'override-language':'es','action-text':'Cuéntele a Maya sobre su proyecto','start-call-text':'Hablar con Maya','end-call-text':'Terminar','expand-text':'Abrir chat','listening-text':'Escuchando','speaking-text':'Maya está hablando'};
+  var el=null;
+  function mount(lang){
+    if(el) el.remove();
+    el=document.createElement('elevenlabs-convai');
+    el.setAttribute('agent-id',AGENT);
+    if(lang==='es') for(var k in ES) el.setAttribute(k,ES[k]);
+    document.body.appendChild(el);
+  }
+  mount(window.IATW_LANG ? window.IATW_LANG() : 'en');
+  window.addEventListener('iatw:lang',function(e){ mount(e.detail); });
+  var s=document.createElement('script');
+  s.src='https://unpkg.com/@elevenlabs/convai-widget-embed@0.18.2';
+  s.async=true; s.type='text/javascript';
+  document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>
