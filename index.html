@@ -1,8 +1,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>We Build Websites</title>
+<meta name="iatw-title-es" content="We Build Websites · Sitios web">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Websites drafted in 4 hours and live in 24–48. We Build Websites, powered by Into All The World Productions.">
+<meta name="description" content="Websites drafted in 4 hours and live in 24–48. We Build Websites, powered by Into All The World Productions." data-es-content="Sitios web con borrador en 4 horas y en línea en 24–48. We Build Websites, impulsado por Into All The World Productions.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<link rel="alternate" hreflang="en" href="https://we-build-websites.netlify.app/?lang=en">
+<link rel="alternate" hreflang="es" href="https://we-build-websites.netlify.app/?lang=es">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="We Build Websites">
 <meta property="og:title" content="We Build Websites — Presentation &amp; first impression is everything">
@@ -394,29 +399,38 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   .sound-hint{top:calc(env(safe-area-inset-top,0px) + 92px);bottom:auto;right:max(16px,env(safe-area-inset-right,0px));transform:translateY(-6px)}
 }
 @media (prefers-reduced-motion:reduce){ .sound.on .eq i{animation:none;height:10px} }
+/* language switch: English / Español */
+nav.primary .lang{display:inline-flex;align-items:center;justify-content:center;height:38px;min-width:38px;padding:0 13px;border-radius:999px;cursor:pointer;
+  font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text);background:rgba(10,12,40,.55);border:1px solid var(--line);transition:border-color .3s}
+nav.primary .lang:hover{border-color:var(--teal)}
+nav.primary .lang .short{display:none}
+@media (max-width:768px){ nav.primary .lang{padding:0} nav.primary .lang .full{display:none} nav.primary .lang .short{display:inline} }
+@media (max-width:440px){ nav.primary{gap:7px} nav.primary .lang,.site-header .sound{height:34px;width:34px;min-width:34px} .site-header .btn-sm{padding:10px 13px;font-size:13.5px} .brand{gap:9px} }
+@media (max-width:400px){ nav.primary{gap:5px} .site-header .btn-sm{padding:10px 11px;font-size:13px} .brand{gap:8px} .brand-mark{width:32px;height:32px} .brand-word{font-size:17px} }
 </style>
 
 <div class="ticker gutter" role="status">
   <i class="dot" aria-hidden="true"></i>
-  <span><b>Rapid build queue open</b><span class="long"> · order now and</span> first draft by <span class="t mono" data-time="draft">–:–</span> <span class="long">today</span></span>
+  <span data-es="<b>Cola <span class=&quot;long&quot;>de construcción </span>rápida abierta</b> · <span class=&quot;long&quot;>ordene ahora y tenga su primer </span>borrador a las <span class=&quot;t mono&quot; data-time=&quot;draft&quot;>–:–</span> <span class=&quot;long&quot;>hoy</span>"><b>Rapid build queue open</b><span class="long"> · order now and</span> first draft by <span class="t mono" data-time="draft">–:–</span> <span class="long">today</span></span>
 </div>
 
 <header class="site-header gutter">
-  <a class="brand" href="#top" aria-label="We Build Websites, home">
+  <a class="brand" href="#top" aria-label="We Build Websites, home" data-es-aria-label="We Build Websites, inicio">
     <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
     <span><span class="brand-word">We Build Websites</span><span class="brand-sub">Into All The World Productions</span></span>
   </a>
-  <nav class="primary" aria-label="Main">
-    <a class="navlink" href="#clock">Launch clock</a>
-    <a class="navlink" href="#work">Our work</a>
-    <a class="navlink" href="#pricing">Pricing</a>
-    <a class="navlink" href="#impressions">First impressions</a>
-    <a class="btn btn-go btn-sm" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener">Talk to Maya</a>
+  <nav class="primary" aria-label="Main" data-es-aria-label="Principal">
+    <a class="navlink" href="#clock" data-es="Reloj de lanzamiento">Launch clock</a>
+    <a class="navlink" href="#work" data-es="Nuestro trabajo">Our work</a>
+    <a class="navlink" href="#pricing" data-es="Precios">Pricing</a>
+    <a class="navlink" href="#impressions" data-es="Primeras impresiones">First impressions</a>
+    <button class="lang" id="lang" type="button" lang="es" aria-label="Ver en español" data-es-aria-label="View in English"><span class="full" data-es="English">Español</span><span class="short" data-es="EN">ES</span></button>
+    <a class="btn btn-go btn-sm" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener" data-es="Hable con Maya">Talk to Maya</a>
   </nav>
 </header>
 
-<button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Sound for the journey"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">Sound off</span></button>
-<div class="sound-hint" id="sound-hint" aria-hidden="true">Turn on sound for the journey</div>
+<button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Sound for the journey" data-es-aria-label="Sonido para el recorrido"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">Sound off</span></button>
+<div class="sound-hint" id="sound-hint" aria-hidden="true" data-es="Active el sonido para el recorrido">Turn on sound for the journey</div>
 
 <main id="top">
   <section id="film" aria-label="We Build Websites">
@@ -427,85 +441,85 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 
       <div class="space">
         <div class="fly c-blue" data-a="0.08" data-b="0.31" data-x="25" data-y="-11">
-          <a class="card" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener"><span class="tag"><i></i>AI intake</span>
-            <h3>Talk to Maya</h3>
-            <p>Tell her about your business in plain words. She turns it into your build brief in minutes.</p>
-            <span class="go">Start the intake</span></a>
+          <a class="card" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener"><span class="tag" data-es="<i></i>Admisión con IA"><i></i>AI intake</span>
+            <h3 data-es="Hable con Maya">Talk to Maya</h3>
+            <p data-es="Cuéntele sobre su negocio con sus propias palabras. Ella lo convierte en el resumen de su proyecto en minutos.">Tell her about your business in plain words. She turns it into your build brief in minutes.</p>
+            <span class="go" data-es="Comenzar la admisión">Start the intake</span></a>
         </div>
         <div class="fly c-violet" data-a="0.27" data-b="0.5" data-x="26" data-y="-3">
-          <a class="card" href="#clock"><span class="tag"><i></i>Live launch clock</span>
-            <h3 class="mono">Draft due <span data-time="draft">–:–</span></h3>
-            <p>Order now and that is your real draft time, counted from this minute.</p>
-            <span class="go">See your full timeline</span></a>
+          <a class="card" href="#clock"><span class="tag" data-es="<i></i>Reloj de lanzamiento en vivo"><i></i>Live launch clock</span>
+            <h3 class="mono" data-es="Borrador a las <span data-time=&quot;draft&quot;>–:–</span>">Draft due <span data-time="draft">–:–</span></h3>
+            <p data-es="Ordene ahora y esa es la hora real de su borrador, contada desde este minuto.">Order now and that is your real draft time, counted from this minute.</p>
+            <span class="go" data-es="Vea su cronograma completo">See your full timeline</span></a>
         </div>
         <div class="fly c-teal" data-a="0.46" data-b="0.67" data-x="25" data-y="-12">
-          <a class="card" href="#work"><span class="tag"><i></i>Our work</span>
-            <h3>See our work</h3>
-            <p>Live sites we have built for real businesses. Open any of them and click around.</p>
-            <span class="go">Browse the sites</span></a>
+          <a class="card" href="#work"><span class="tag" data-es="<i></i>Nuestro trabajo"><i></i>Our work</span>
+            <h3 data-es="Vea nuestro trabajo">See our work</h3>
+            <p data-es="Sitios en línea que hemos creado para negocios reales. Abra cualquiera y explore.">Live sites we have built for real businesses. Open any of them and click around.</p>
+            <span class="go" data-es="Explorar los sitios">Browse the sites</span></a>
         </div>
         <div class="fly c-gold" data-a="0.62" data-b="0.85" data-x="24" data-y="-16">
-          <a class="card" href="#pricing"><span class="tag"><i></i>Pricing</span>
-            <h3>From $500</h3>
-            <p>Basic sites from $500. Dynamic, interactive builds at $2,000. Custom work quoted with you.</p>
-            <span class="go">Find your package</span></a>
+          <a class="card" href="#pricing"><span class="tag" data-es="<i></i>Precios"><i></i>Pricing</span>
+            <h3 data-es="Desde $500">From $500</h3>
+            <p data-es="Sitios básicos desde $500. Sitios dinámicos e interactivos a $2,000. Trabajo personalizado cotizado con usted.">Basic sites from $500. Dynamic, interactive builds at $2,000. Custom work quoted with you.</p>
+            <span class="go" data-es="Encuentre su paquete">Find your package</span></a>
         </div>
       </div>
 
       <div class="resolve" id="resolve">
         <div class="rv rv-head">
-          <h3 id="rv-title" data-text="This could be your homepage by tonight."></h3>
-          <p>Draft by <b data-time="draft">–:–</b> · live in 24–48 hrs</p>
+          <h3 id="rv-title" data-text="This could be your homepage by tonight." data-text-es="Esta podría ser su página de inicio esta noche."></h3>
+          <p data-es="Borrador a las <b data-time=&quot;draft&quot;>–:–</b> · en línea en 24–48 h">Draft by <b data-time="draft">–:–</b> · live in 24–48 hrs</p>
         </div>
         <div class="rv-btns">
-          <a class="rv rv-btn rv-b1" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener">Start my build</a>
-          <a class="rv rv-btn rv-b2" href="#pricing">See pricing</a>
+          <a class="rv rv-btn rv-b1" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener" data-es="Empezar mi sitio">Start my build</a>
+          <a class="rv rv-btn rv-b2" href="#pricing" data-es="Ver precios">See pricing</a>
         </div>
-        <a class="rv rv-row rv-r1" href="#clock"><i></i><span><small>Launch clock</small><strong>Draft by <span data-time="draft">–:–</span></strong></span><em>View</em></a>
-        <a class="rv rv-row rv-r2" href="#pricing"><i></i><span><small>Pricing</small><strong>From $500</strong></span><em>Plans</em></a>
-        <a class="rv rv-row rv-r3" href="#work"><i></i><span><small>Our work</small><strong>See the sites</strong></span><em>Browse</em></a>
+        <a class="rv rv-row rv-r1" href="#clock"><i></i><span data-es="<small>Reloj de lanzamiento</small><strong>Borrador a las <span data-time=&quot;draft&quot;>–:–</span></strong>"><small>Launch clock</small><strong>Draft by <span data-time="draft">–:–</span></strong></span><em data-es="Ver">View</em></a>
+        <a class="rv rv-row rv-r2" href="#pricing"><i></i><span data-es="<small>Precios</small><strong>Desde $500</strong>"><small>Pricing</small><strong>From $500</strong></span><em data-es="Planes">Plans</em></a>
+        <a class="rv rv-row rv-r3" href="#work"><i></i><span data-es="<small>Nuestro trabajo</small><strong>Vea los sitios</strong>"><small>Our work</small><strong>See the sites</strong></span><em data-es="Explorar">Browse</em></a>
       </div>
 
       <div class="beat hero gutter" data-in="-0.1" data-peak="0" data-out="0.1">
         <div class="wrap"><div class="inner">
-          <p class="eyebrow">Powered by Into All The World Productions</p>
-          <h1>Presentation &amp; first impression is <em>everything.</em></h1>
-          <p class="lede">Whether you have no website at all or one that is costing you customers, we build the site that turns people searching for your business into loyal, repeat clients.</p>
+          <p class="eyebrow" data-es="Impulsado por Into All The World Productions">Powered by Into All The World Productions</p>
+          <h1 data-es="Presentación y primera impresión lo son <em>todo.</em>">Presentation &amp; first impression is <em>everything.</em></h1>
+          <p class="lede" data-es="Ya sea que no tenga sitio web o que el suyo le esté costando clientes, construimos el sitio que convierte a quienes buscan su negocio en clientes fieles que regresan.">Whether you have no website at all or one that is costing you customers, we build the site that turns people searching for your business into loyal, repeat clients.</p>
           <div class="cta-row">
-            <a class="btn btn-go" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener">Tell Maya what to build</a>
-            <a class="btn btn-gold" href="#pricing">See pricing</a>
+            <a class="btn btn-go" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener" data-es="Dígale a Maya qué construir">Tell Maya what to build</a>
+            <a class="btn btn-gold" href="#pricing" data-es="Ver precios">See pricing</a>
           </div>
         </div></div>
       </div>
 
       <div class="beat gutter" data-in="0.14" data-peak="0.21" data-out="0.3">
         <div class="wrap"><div class="inner">
-          <p class="eyebrow">Brief received</p>
-          <h2>You describe it. The clock starts.</h2>
-          <p>Tell Maya, our AI intake assistant, what your business needs. Your project goes into the build queue the minute your brief lands.</p>
+          <p class="eyebrow" data-es="Resumen recibido">Brief received</p>
+          <h2 data-es="Usted lo describe. El reloj arranca.">You describe it. The clock starts.</h2>
+          <p data-es="Dígale a Maya, nuestra asistente de admisión con IA, lo que su negocio necesita. Su proyecto entra en la cola de construcción en el momento en que llega su resumen.">Tell Maya, our AI intake assistant, what your business needs. Your project goes into the build queue the minute your brief lands.</p>
         </div></div>
       </div>
 
       <div class="beat beat-low gutter" data-in="0.35" data-peak="0.42" data-out="0.51">
         <div class="wrap"><div class="inner">
-          <p class="eyebrow">Interactive draft</p>
-          <h2>Your first draft in 4 hours.</h2>
-          <p>Not a sketch or a mood board. A working draft you can click through on your own phone, the same day you reach out.</p>
+          <p class="eyebrow" data-es="Borrador interactivo">Interactive draft</p>
+          <h2 data-es="Su primer borrador en 4 horas.">Your first draft in 4 hours.</h2>
+          <p data-es="No es un boceto ni un tablero de ideas. Es un borrador funcional que puede recorrer en su propio teléfono, el mismo día que nos contacta.">Not a sketch or a mood board. A working draft you can click through on your own phone, the same day you reach out.</p>
         </div></div>
       </div>
 
       <div class="beat beat-low gutter" data-in="0.57" data-peak="0.65" data-out="0.76">
         <div class="wrap"><div class="inner">
-          <p class="eyebrow">Finished product</p>
-          <h2>Live in 24 to 48 hours.</h2>
-          <p>Polished, mobile-ready and published, so the next person who searches for you finds a business worth calling.</p>
+          <p class="eyebrow" data-es="Producto terminado">Finished product</p>
+          <h2 data-es="En línea en 24 a 48 horas.">Live in 24 to 48 hours.</h2>
+          <p data-es="Pulido, listo para celulares y publicado, para que la próxima persona que lo busque encuentre un negocio al que vale la pena llamar.">Polished, mobile-ready and published, so the next person who searches for you finds a business worth calling.</p>
         </div></div>
       </div>
 
       <div class="readout" aria-hidden="true">
-        <span>Build</span><span class="bar"><i id="readbar"></i></span><b id="readlabel">Brief</b>
+        <span data-es="Proyecto">Build</span><span class="bar"><i id="readbar"></i></span><b id="readlabel">Brief</b>
       </div>
-      <div class="scroll-cue" id="cue" aria-hidden="true"><i></i>Scroll</div>
+      <div class="scroll-cue" id="cue" aria-hidden="true"><i></i><span data-es="Desplace">Scroll</span></div>
       <div class="loader" aria-hidden="true"><i id="loadbar"></i></div>
     </div>
   </section>
@@ -513,26 +527,26 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   <section class="section gutter" id="clock" aria-labelledby="clock-h">
     <div class="wrap clock-grid">
       <div>
-        <p class="section-label">Rapid launch clock</p>
-        <h2 id="clock-h">If you sent your brief right now:</h2>
+        <p class="section-label" data-es="Reloj de lanzamiento rápido">Rapid launch clock</p>
+        <h2 id="clock-h" data-es="Si enviara su resumen ahora mismo:">If you sent your brief right now:</h2>
         <div class="bignow" aria-live="off"><span data-time="now">–:–</span><small data-time="ampm"></small></div>
-        <p class="clock-note">Times shown in your local time zone · <span data-time="tz"></span></p>
+        <p class="clock-note" data-es="Horas mostradas en su zona horaria local · <span data-time=&quot;tz&quot;></span>">Times shown in your local time zone · <span data-time="tz"></span></p>
       </div>
-      <div class="ticket" role="group" aria-label="Your delivery schedule">
-        <div class="ticket-head"><span>Delivery estimate</span><span class="sla">4-hour draft</span></div>
+      <div class="ticket" role="group" aria-label="Your delivery schedule" data-es-aria-label="Su calendario de entrega">
+        <div class="ticket-head"><span data-es="Entrega estimada">Delivery estimate</span><span class="sla" data-es="Borrador en 4 horas">4-hour draft</span></div>
         <div class="stage-row">
           <span class="n">01</span>
-          <div><small>Brief submitted</small><strong>Project kickoff</strong></div>
+          <div data-es="<small>Resumen enviado</small><strong>Inicio del proyecto</strong>"><small>Brief submitted</small><strong>Project kickoff</strong></div>
           <time data-time="kickoff">–:–</time>
         </div>
         <div class="stage-row s2">
           <span class="n">02</span>
-          <div><small>Within 4 hours</small><strong>Interactive draft ready</strong></div>
+          <div data-es="<small>En menos de 4 horas</small><strong>Borrador interactivo listo</strong>"><small>Within 4 hours</small><strong>Interactive draft ready</strong></div>
           <time data-time="draftFull">–:–</time>
         </div>
         <div class="stage-row s3">
           <span class="n">03</span>
-          <div><small>24 to 48 hours</small><strong>Finished website live</strong></div>
+          <div data-es="<small>De 24 a 48 horas</small><strong>Sitio terminado en línea</strong>"><small>24 to 48 hours</small><strong>Finished website live</strong></div>
           <time data-time="live">–:–</time>
         </div>
       </div>
@@ -543,8 +557,8 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   <section class="section gutter" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="work-head">
-        <div><p class="section-label">Our work</p><h2 id="work-h">Click in. These are live.</h2></div>
-        <p class="work-sub">Real sites for real businesses in Miami and beyond. Open any of them.</p>
+        <div data-es="<p class=&quot;section-label&quot;>Nuestro trabajo</p><h2 id=&quot;work-h&quot;>Entre. Están en línea.</h2>"><p class="section-label">Our work</p><h2 id="work-h">Click in. These are live.</h2></div>
+        <p class="work-sub" data-es="Sitios reales para negocios reales en Miami y más allá. Abra cualquiera.">Real sites for real businesses in Miami and beyond. Open any of them.</p>
       </div>
       <div class="strip" id="strip">
         <div class="strip-glow" aria-hidden="true"></div>
@@ -552,12 +566,12 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
       </div>
       <div class="caption" id="caption" aria-live="polite">
         <div>
-          <div class="c-top"><h3 id="cap-name">Eight builds, live right now</h3><span class="status live" id="cap-status">Live</span></div>
-          <p id="cap-desc">Pool builders, an AC company, lighting contractors, estheticians, exporters, cigar makers, a music movement and an AI app. Pick one below or catch it on the strip.</p>
+          <div class="c-top"><h3 id="cap-name" data-es="Ocho proyectos, en línea ahora mismo">Eight builds, live right now</h3><span class="status live" id="cap-status">Live</span></div>
+          <p id="cap-desc" data-es="Constructores de piscinas, una compañía de aire acondicionado, contratistas de iluminación, esteticistas, exportadores, fabricantes de cigarros, un movimiento musical y una app de IA. Elija uno abajo o atrápelo en la cinta.">Pool builders, an AC company, lighting contractors, estheticians, exporters, cigar makers, a music movement and an AI app. Pick one below or catch it on the strip.</p>
         </div>
         <a class="btn btn-go open" id="cap-open" href="https://worldwidedistributorsinc.com" target="_blank" rel="noopener">Open site ↗</a>
       </div>
-      <nav class="chips" id="chips" aria-label="Open a client site"></nav>
+      <nav class="chips" id="chips" aria-label="Open a client site" data-es-aria-label="Abrir un sitio de cliente"></nav>
     </div>
   </section>
 
@@ -565,13 +579,13 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     <div class="wrap">
       <div class="picker-head">
         <div>
-          <p class="section-label">Pricing</p>
-          <h2 id="pricing-h" style="margin:0">Where does your business stand today?</h2>
+          <p class="section-label" data-es="Precios">Pricing</p>
+          <h2 id="pricing-h" style="margin:0" data-es="¿Dónde está su negocio hoy?">Where does your business stand today?</h2>
         </div>
-        <div class="tabs" role="tablist" aria-label="Your situation">
-          <button class="tab" role="tab" id="tab-none" aria-controls="panel" aria-selected="true" data-k="none">No website yet</button>
-          <button class="tab" role="tab" id="tab-upgrade" aria-controls="panel" aria-selected="false" data-k="upgrade">Need an upgrade</button>
-          <button class="tab" role="tab" id="tab-top" aria-controls="panel" aria-selected="false" data-k="top">Crème of the crop</button>
+        <div class="tabs" role="tablist" aria-label="Your situation" data-es-aria-label="Su situación">
+          <button class="tab" role="tab" id="tab-none" aria-controls="panel" aria-selected="true" data-k="none" data-es="Sin sitio web">No website yet</button>
+          <button class="tab" role="tab" id="tab-upgrade" aria-controls="panel" aria-selected="false" data-k="upgrade" data-es="Mejorar el mío">Need an upgrade</button>
+          <button class="tab" role="tab" id="tab-top" aria-controls="panel" aria-selected="false" data-k="top" data-es="La crème">Crème of the crop</button>
         </div>
       </div>
       <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-none" aria-live="polite">
@@ -597,23 +611,23 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 
   <section class="section gutter" id="impressions" aria-labelledby="imp-h">
     <div class="wrap">
-      <h2 class="impress-big" id="imp-h">People judge your business <em>before</em> they read a word.</h2>
+      <h2 class="impress-big" id="imp-h" data-es="La gente juzga su negocio <em>antes</em> de leer una sola palabra.">People judge your business <em>before</em> they read a word.</h2>
       <dl class="impress-list">
-        <div><dt>Search</dt><dd>Your site is the first meeting most customers will ever have with you.</dd></div>
-        <div><dt>Trust</dt><dd>A dated or missing site tells people you might be closed. A sharp one tells them to call.</dd></div>
-        <div><dt>Return</dt><dd>We build for repeat clients, not one-time clicks: clear offers, easy contact, fast pages.</dd></div>
+        <div data-es="<dt>Búsqueda</dt><dd>Su sitio es la primera reunión que la mayoría de sus clientes tendrá con usted.</dd>"><dt>Search</dt><dd>Your site is the first meeting most customers will ever have with you.</dd></div>
+        <div data-es="<dt>Confianza</dt><dd>Un sitio anticuado o inexistente les dice que quizás cerró. Uno impecable les dice que llamen.</dd>"><dt>Trust</dt><dd>A dated or missing site tells people you might be closed. A sharp one tells them to call.</dd></div>
+        <div data-es="<dt>Regreso</dt><dd>Construimos para clientes que regresan, no para clics de una vez: ofertas claras, contacto fácil, páginas rápidas.</dd>"><dt>Return</dt><dd>We build for repeat clients, not one-time clicks: clear offers, easy contact, fast pages.</dd></div>
       </dl>
     </div>
   </section>
 
   <section class="section gutter" id="start" aria-labelledby="start-h">
     <div class="wrap">
-      <p class="section-label">Start your build</p>
-      <h2 id="start-h">Tell us what you want built.</h2>
-      <p class="sub">Maya, our AI intake assistant, takes your brief in a few minutes. Want to see our work first? The reel and portfolio are one click away.</p>
+      <p class="section-label" data-es="Empiece su proyecto">Start your build</p>
+      <h2 id="start-h" data-es="Díganos qué quiere construir.">Tell us what you want built.</h2>
+      <p class="sub" data-es="Maya, nuestra asistente de admisión con IA, toma su resumen en pocos minutos. ¿Quiere ver nuestro trabajo primero? El reel y el portafolio están a un clic.">Maya, our AI intake assistant, takes your brief in a few minutes. Want to see our work first? The reel and portfolio are one click away.</p>
       <div class="close-row">
-        <a class="btn btn-go btn-xl" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener">Talk to Maya</a>
-        <a class="btn btn-gold btn-xl" href="https://intoalltheworldstudio.netlify.app/portfolio.html" target="_blank" rel="noopener">See the reel &amp; portfolio</a>
+        <a class="btn btn-go btn-xl" href="https://intoalltheworldstudio.netlify.app/" target="_blank" rel="noopener" data-es="Hable con Maya">Talk to Maya</a>
+        <a class="btn btn-gold btn-xl" href="https://intoalltheworldstudio.netlify.app/portfolio.html" target="_blank" rel="noopener" data-es="Vea el reel y el portafolio">See the reel &amp; portfolio</a>
       </div>
     </div>
   </section>
@@ -622,16 +636,57 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <footer class="gutter">
   <div class="wrap">
     <span>© <span id="yr">2026</span> We Build Websites · Into All The World Productions</span>
-    <nav aria-label="Footer">
-      <a href="#pricing">Pricing</a>
-      <a href="https://sites.google.com/view/we-build-web-sites" target="_blank" rel="noopener">Legal &amp; terms</a>
+    <nav aria-label="Footer" data-es-aria-label="Pie de página">
+      <a href="#pricing" data-es="Precios">Pricing</a>
+      <a href="https://sites.google.com/view/we-build-web-sites" target="_blank" rel="noopener" data-es="Aviso legal y términos">Legal &amp; terms</a>
     </nav>
   </div>
 </footer>
 
 <script>
+/* ===== Language switch (English / Español) =====
+   Spanish lives next to the English: data-es holds an element's Spanish inner HTML, data-es-aria-label / data-es-content its
+   Spanish attributes, and the script below keeps Spanish copies of the text it writes itself (offers, sites, clock words).
+   Choice order: ?lang= in the URL, then the visitor's saved choice, then their browser language.
+   Links to the Into All The World studio site carry ?lang=es so Maya and The Reel open in the same language. */
+(function(){
+  var KEY='wbw-lang', root=document.documentElement;
+  function saved(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function save(l){ try{ localStorage.setItem(KEY,l); }catch(e){} }
+  var q=(location.search.match(/[?&]lang=(en|es)\b/)||[])[1];
+  var lang=q||saved()||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
+  var ATTRS=['aria-label','content'], titleEn=document.title, titleEsEl=document.querySelector('meta[name="iatw-title-es"]');
+  function apply(l){
+    lang=l; root.lang=l;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      if(el._en===undefined) el._en=el.innerHTML;
+      el.innerHTML = l==='es' ? el.getAttribute('data-es') : el._en;
+    });
+    ATTRS.forEach(function(a){
+      document.querySelectorAll('[data-es-'+a+']').forEach(function(el){
+        var k='_en_'+a; if(el[k]===undefined) el[k]=el.getAttribute(a)||'';
+        el.setAttribute(a, l==='es' ? el.getAttribute('data-es-'+a) : el[k]);
+      });
+    });
+    document.title = (l==='es' && titleEsEl) ? titleEsEl.content : titleEn;
+    var b=document.getElementById('lang'); if(b) b.setAttribute('lang', l==='es'?'en':'es');
+    document.querySelectorAll('a[href^="https://intoalltheworldstudio.netlify.app"]').forEach(function(a){
+      var u=a.getAttribute('href').replace(/[?&]lang=(en|es)/,''); a.setAttribute('href', l==='es' ? u+(u.indexOf('?')<0?'?':'&')+'lang=es' : u);
+    });
+    window.dispatchEvent(new CustomEvent('wbw:lang',{detail:l}));
+  }
+  window.WBW_LANG=function(){ return lang; };
+  document.addEventListener('click',function(e){
+    if(!(e.target.closest && e.target.closest('#lang'))) return;
+    var l = lang==='es' ? 'en' : 'es'; save(l); apply(l);
+  });
+  apply(lang);
+})();
+</script>
+<script>
 (function(){
   document.documentElement.classList.add('js');
+  function ES(){ return window.WBW_LANG && window.WBW_LANG() === 'es'; }
   var MOBILE = window.matchMedia('(max-width: 768px)').matches;
   // desktop: film/pack_NN.json (433 frames). phones: film/m_pack_NN.json, every other frame at 960px (217 frames, about half the data)
   var FRAME_COUNT = MOBILE ? 217 : 433, PACK_PREFIX = MOBILE ? 'film/m_pack_' : 'film/pack_';
@@ -645,9 +700,9 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   function fmt(d, opts){ return d.toLocaleTimeString([], Object.assign({hour:'numeric', minute:'2-digit'}, opts||{})); }
   function fmtDay(d){
     var today = new Date(); var tmr = new Date(); tmr.setDate(today.getDate()+1);
-    if (d.toDateString() === today.toDateString()) return 'Today';
-    if (d.toDateString() === tmr.toDateString()) return 'Tomorrow';
-    return d.toLocaleDateString([], {weekday:'short'});
+    if (d.toDateString() === today.toDateString()) return ES() ? 'Hoy' : 'Today';
+    if (d.toDateString() === tmr.toDateString()) return ES() ? 'Mañana' : 'Tomorrow';
+    return d.toLocaleDateString(ES() ? 'es' : [], {weekday:'short'});
   }
   function setAll(key, val){ document.querySelectorAll('[data-time="'+key+'"]').forEach(function(el){ el.textContent = val; }); }
   function tick(){
@@ -657,10 +712,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     var live48 = new Date(now.getTime() + 48*3600e3);
     var parts = fmt(now).split(' ');
     setAll('now', parts[0]); setAll('ampm', parts[1] || '');
-    setAll('kickoff', 'Now · ' + fmt(now));
+    setAll('kickoff', (ES() ? 'Ahora · ' : 'Now · ') + fmt(now));
     setAll('draft', fmt(draft));
     setAll('draftFull', fmtDay(draft) + ' · ' + fmt(draft));
-    setAll('live', fmtDay(live24) + ' – ' + fmtDay(live48) + ' · by ' + fmt(live48));
+    setAll('live', fmtDay(live24) + ' – ' + fmtDay(live48) + (ES() ? ' · antes de las ' : ' · by ') + fmt(live48));
     try { setAll('tz', Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g,' ')); } catch(e){}
   }
   tick(); setInterval(tick, 15000);
@@ -693,9 +748,36 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
       cta:'Request a quote', alt:['Ready to start smaller? ','See the $2,000 Dynamic Website','upgrade']
     }
   };
+  var OFFERS_ES = {
+    none: {
+      h:'Los clientes lo están buscando ahora mismo.',
+      p1:'Sin un sitio, encuentran a un competidor y nunca supieron que usted era una opción.',
+      p2:'El Paquete Básico le da un sitio limpio y profesional con borrador en 4 horas, para que deje de perder a quienes ya lo buscaban.',
+      tag:'Recomendado · Paquete Básico', price:'$500', unit:'pago único', gold:false,
+      list:['Diseño limpio y profesional creado alrededor de su negocio','Funciona en todo teléfono, tableta y computadora','Borrador interactivo en 4 horas, en línea en 24 a 48'],
+      cta:'Empezar mi sitio Básico', alt:['¿Quiere más interactividad? ','Vea el Sitio Dinámico de $2,000','upgrade']
+    },
+    upgrade: {
+      h:'Su sitio está haciendo lo contrario de su trabajo.',
+      p1:'Un sitio anticuado hace que un negocio activo parezca cerrado. Los visitantes se van antes de llegar a su número de teléfono.',
+      p2:'El Sitio Dinámico lo reconstruye con movimiento, secciones interactivas y un camino claro para contactarlo.',
+      tag:'Recomendado · Sitio Dinámico', price:'$2,000', unit:'pago único', gold:false,
+      list:['Secciones interactivas y movimiento a la medida','Hecho para convertir visitantes en llamadas y citas','Borrador interactivo en 4 horas, en línea en 24 a 48'],
+      cta:'Mejorar a Dinámico', alt:['¿Solo necesita lo esencial? ','Vea el Paquete Básico de $500','none']
+    },
+    top: {
+      h:'Quiere el sitio del que todos hablan.',
+      p1:'Scroll cinematográfico, 3D a la medida y película generada con IA, para marcas que compiten por la primera impresión.',
+      p2:'Cada proyecto de primer nivel se define con usted, para que la cotización refleje exactamente lo que quiere.',
+      tag:'La crème · A la medida', price:'A la medida', unit:'cotizado por proyecto', gold:true,
+      list:['Scroll cinematográfico y película generada con IA','3D y diseño de movimiento a la medida','Definido y cotizado con usted antes de empezar'],
+      cta:'Pedir una cotización', alt:['¿Prefiere empezar más pequeño? ','Vea el Sitio Dinámico de $2,000','upgrade']
+    }
+  };
+  var chosen = 'none';
   var tabs = document.querySelectorAll('.tab');
   function choose(k, focus){
-    var o = OFFERS[k]; if(!o) return;
+    var o = (ES() ? OFFERS_ES : OFFERS)[k]; if(!o) return; chosen = k;
     tabs.forEach(function(t){ var on = t.dataset.k===k; t.setAttribute('aria-selected', on); t.tabIndex = on?0:-1; if(on&&focus) t.focus(); });
     document.getElementById('panel').setAttribute('aria-labelledby','tab-'+k);
     document.getElementById('sit-h').textContent = o.h;
@@ -734,24 +816,25 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     setVW(); addEventListener('resize', setVW);
     var SITES = [
       {name:'Worldwide Distributors', url:'https://worldwidedistributorsinc.com', img:'work/wwd.jpg', st:'live', label:'Live', dot:'#5b9bff',
-       desc:'Miami · One site for a lighting, electrical and construction firm, with every division under one contract.'},
+       desc:'Miami · One site for a lighting, electrical and construction firm, with every division under one contract.', desc_es:'Miami · Un sitio para una empresa de iluminación, electricidad y construcción, con todas sus divisiones bajo un solo contrato.'},
       {name:'M&G Brothers Construction', url:'https://mgbrothers-pools.higgsfield.app/', img:'work/mg.jpg', st:'preview', label:'Preview', dot:'#4fb7e8',
-       desc:'South Florida · Luxury pools and outdoor living, with 3D design before construction, financing and free site assessments.'},
+       desc:'South Florida · Luxury pools and outdoor living, with 3D design before construction, financing and free site assessments.', desc_es:'Sur de Florida · Piscinas de lujo y espacios exteriores, con diseño 3D antes de construir, financiamiento y evaluaciones gratuitas.'},
       {name:'Nel & Sons Air Conditioning', url:'https://nel-sons-eric-review.netlify.app/', img:'work/nelsons.jpg', st:'preview', label:'Preview', dot:'#c9a46a',
-       desc:'Miami-Dade & Broward · Luxury HVAC for South Florida homes, with a cinematic estate fly-through, an interactive 3D AC unit and English/Spanish.'},
+       desc:'Miami-Dade & Broward · Luxury HVAC for South Florida homes, with a cinematic estate fly-through, an interactive 3D AC unit and English/Spanish.', desc_es:'Miami-Dade y Broward · Aire acondicionado de lujo para hogares del Sur de Florida, con un recorrido cinematográfico, una unidad de AC en 3D interactiva y en inglés/español.'},
       {name:'Cuba B459', url:'https://cubab459.com/', img:'work/cuba.jpg', st:'live', label:'Live', dot:'#e8b65a',
-       desc:"Miami · Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying Cuba's story to a new generation."},
+       desc:"Miami · Cinematic launch site for Tony Calatayud's El Sol De Cuba, a music movement carrying Cuba's story to a new generation.", desc_es:'Miami · Sitio de lanzamiento cinematográfico para El Sol De Cuba de Tony Calatayud, un movimiento musical que lleva la historia de Cuba a una nueva generación.'},
       {name:'Beautify Me Facials', url:'https://beautifyme-preview.netlify.app', img:'work/beautify.jpg', st:'preview', label:'Preview', dot:'#a27dff', pos:'left center',
-       desc:'Palmetto Bay · Cinematic esthetician site with a before-and-after mirror visitors slide themselves, Glow Session booking and memberships.'},
+       desc:'Palmetto Bay · Cinematic esthetician site with a before-and-after mirror visitors slide themselves, Glow Session booking and memberships.', desc_es:'Palmetto Bay · Sitio cinematográfico para esteticista con un espejo de antes y después que el visitante desliza, reservas de Glow Sessions y membresías.'},
       {name:'Caribbean Exporters Inc.', url:'https://caribbeanexportersinc-v2.netlify.app/', img:'work/caribbean.jpg', st:'concept', label:'Concept', dot:'#e8b65a',
-       desc:'Miami · Version 2 of the redesign for a procurement and export company supplying government and business buyers across the Caribbean.'},
+       desc:'Miami · Version 2 of the redesign for a procurement and export company supplying government and business buyers across the Caribbean.', desc_es:'Miami · Versión 2 del rediseño para una empresa de compras y exportación que abastece a compradores gubernamentales y empresariales en todo el Caribe.'},
       {name:"Heaven's Leaf Cigar Co.", url:'https://heavens-leaf-site.netlify.app', img:'work/heavens.jpg', st:'concept', label:'Concept', dot:'#e8b65a',
-       desc:'Miami · A six-chapter scroll story for a premium cigar maker, with a cigar breakdown and a merch shop.'},
+       desc:'Miami · A six-chapter scroll story for a premium cigar maker, with a cigar breakdown and a merch shop.', desc_es:'Miami · Una historia en seis capítulos para un fabricante de cigarros premium, con un desglose del cigarro y una tienda.'},
       {name:'Cigar & Pairing Atlas', url:'https://cigarandpairingatlas.netlify.app', img:'work/atlas.jpg', st:'live', label:'Live app', dot:'#2fe2c2',
-       desc:'Mobile web app · AI that pairs any cigar with spirits, coffee and cocktails. Voice search, photo ID and Spanish built in.'}
+       desc:'Mobile web app · AI that pairs any cigar with spirits, coffee and cocktails. Voice search, photo ID and Spanish built in.', desc_es:'App web móvil · IA que combina cualquier cigarro con licores, café y cócteles. Búsqueda por voz, identificación por foto y español incluidos.'}
     ];
     var PRIVATE = {name:'Work Order System', url:'https://intoalltheworldstudio.netlify.app/', st:'private', label:'Private',
-       desc:'Field operations · Replaced paper tickets for a 15-person crew: technician app, office dashboard, voice notes with translation. Demo on request.', dot:'#a0a6d2', cta:'Ask Maya for a demo ↗'};
+       desc:'Field operations · Replaced paper tickets for a 15-person crew: technician app, office dashboard, voice notes with translation. Demo on request.', dot:'#a0a6d2', cta:'Ask Maya for a demo ↗',
+       name_es:'Sistema de Órdenes de Trabajo', desc_es:'Operaciones de campo · Reemplazó las órdenes en papel de un equipo de 15 personas: app para técnicos, panel de oficina, notas de voz con traducción. Demo a solicitud.', cta_es:'Pídale una demo a Maya ↗'};
 
     // geometry (ported from the tilted-grid hero): camera distance in cylinder radii, slices per tile
     var SLICES = MOBILE ? 6 : 8, CAMERA = 1.6, MAX_WIDTH = MOBILE ? 70 : 55;
@@ -829,19 +912,28 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     // caption + chips
     var cap = document.getElementById('caption'), cn = document.getElementById('cap-name'), cs = document.getElementById('cap-status'),
         cd = document.getElementById('cap-desc'), co = document.getElementById('cap-open'), chips = document.getElementById('chips');
+    var LABEL_ES = {live:'En línea', preview:'Vista previa', concept:'Concepto', private:'Privado'}, current = null;
     function show(site){
-      cn.textContent = site.name; cs.textContent = site.label; cs.className = 'status ' + site.st;
-      cd.textContent = site.desc; co.href = site.url; co.textContent = site.cta || 'Open site ↗';
+      var es = ES(); current = site;
+      cn.textContent = (es && site.name_es) || site.name; cs.textContent = es ? (LABEL_ES[site.st] || site.label) : site.label; cs.className = 'status ' + site.st;
+      cd.textContent = (es && site.desc_es) || site.desc; co.href = site.url;
+      co.textContent = es ? (site.cta_es || 'Abrir sitio ↗') : (site.cta || 'Open site ↗');
       cap.classList.add('on');
       Array.prototype.forEach.call(chips.children, function(c){ c.setAttribute('aria-current', c._site === site ? 'true' : 'false'); });
     }
     SITES.concat([PRIVATE]).forEach(function(site){
       var c = document.createElement('a'); c.className = 'chip'; c.href = site.url; c.target = '_blank'; c.rel = 'noopener';
       c.style.setProperty('--dot', site.dot); c._site = site;
-      c.innerHTML = '<i></i>'; c.appendChild(document.createTextNode(site.name));
+      c.innerHTML = '<i></i>'; c._label = document.createTextNode((ES() && site.name_es) || site.name); c.appendChild(c._label);
       c.addEventListener('mouseenter', function(){ show(site); }); c.addEventListener('focus', function(){ show(site); });
       chips.appendChild(c);
     });
+    function langCaption(){
+      Array.prototype.forEach.call(chips.children, function(c){ c._label.nodeValue = (ES() && c._site.name_es) || c._site.name; });
+      if (current) show(current);
+      else { co.textContent = ES() ? 'Abrir sitio ↗' : 'Open site ↗'; cs.textContent = ES() ? 'En línea' : 'Live'; }
+    }
+    langCaption(); window.addEventListener('wbw:lang', langCaption);
 
     /* mouse: steer speed with the cursor, grab and fling, camera and glow follow the pointer */
     var glow = strip.querySelector('.strip-glow');
@@ -922,6 +1014,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   var readbar = document.getElementById('readbar'), readlabel = document.getElementById('readlabel');
   var cue = document.getElementById('cue'), loadbar = document.getElementById('loadbar');
   var STAGES = [[0,'Brief'],[0.14,'Kickoff'],[0.42,'Layout'],[0.62,'Design'],[0.84,'Live']];
+  var STAGES_ES = ['Resumen','Arranque','Maqueta','Diseño','En línea'];
   var FILM_END = 0.86;   // film reaches its last frame here; the rest of the scroll belongs to the landing
 
   /* fly-past cards */
@@ -949,12 +1042,14 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
   var resolve = document.getElementById('resolve');
   var rvTitle = document.getElementById('rv-title');
   var rvChars = [];
-  (function(){
-    var s = rvTitle.dataset.text;
+  function typeTitle(){
+    var s = (ES() && rvTitle.dataset.textEs) || rvTitle.dataset.text;
+    rvTitle.innerHTML = ''; rvChars = [];
     for (var c=0; c<s.length; c++){ var sp = document.createElement('span'); sp.className = 'ch'; sp.textContent = s[c]; rvTitle.appendChild(sp); rvChars.push(sp); }
     var caret = document.createElement('span'); caret.className = 'caret'; rvTitle.appendChild(caret);
     rvTitle.setAttribute('aria-label', s);
-  })();
+  }
+  typeTitle();
   var imgRect = {x:0, y:0, w:0, h:0}, rectKey = '';
   function placeResolve(){
     if (MOBILE) return;
@@ -1088,7 +1183,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     handoff.style.opacity = Math.max(0, Math.min(1, (p - 0.95) / 0.05)).toFixed(3);
     flyUpdate(p); resolveUpdate(p);
     readbar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
-    var lbl = STAGES[0][1]; for (var s=0; s<STAGES.length; s++) if (p >= STAGES[s][0]) lbl = STAGES[s][1];
+    var es = ES(), lbl = es ? STAGES_ES[0] : STAGES[0][1]; for (var s=0; s<STAGES.length; s++) if (p >= STAGES[s][0]) lbl = es ? STAGES_ES[s] : STAGES[s][1];
     if (readlabel.textContent !== lbl) readlabel.textContent = lbl;
     cue.style.opacity = Math.max(0, 1 - p*14).toFixed(2);
   }
@@ -1102,7 +1197,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
     function save(){ try { localStorage.setItem(KEY, want ? '1' : '0'); } catch(e){} }
     function ui(){
       btn.setAttribute('aria-pressed', want ? 'true' : 'false');
-      btn.querySelector('.lbl').textContent = want ? 'Sound on' : 'Sound off';
+      btn.querySelector('.lbl').textContent = ES() ? (want ? 'Sonido activado' : 'Sonido apagado') : (want ? 'Sound on' : 'Sound off');
       btn.classList.toggle('on', want && ctx && ctx.state === 'running');
     }
     var mtof = function(m){ return 440 * Math.pow(2, (m - 69) / 12); };
@@ -1259,11 +1354,15 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
       setTimeout(function(){ if (scrollY < 80) hint.classList.add('show'); }, 1800); setTimeout(function(){ hint.classList.remove('show'); }, 9000);
       addEventListener('scroll', function(){ if (scrollY > 80) hint.classList.remove('show'); }, {passive:true});
     }
-    ui();
+    ui(); window.addEventListener('wbw:lang', ui);
     return {tick:update};
   })();
 
   var lastP = -1;
+  window.addEventListener('wbw:lang', function(){
+    tick(); choose(chosen); typeTitle(); shownChars = -1; lastP = -1;
+  });
+  if (ES()) choose('none');
   function frame(){
     progress = filmProgress();
     SCORE.tick(progress);
